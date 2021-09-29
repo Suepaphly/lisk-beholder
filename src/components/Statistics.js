@@ -20,7 +20,7 @@ const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolu
               <td className="textAlignRight"><strong> Circulating Supply: </strong> {Number(circSupply).toLocaleString("en")} LSK </td>
           </tr>
           <tr>
-              <td><strong> Total Market Cap: </strong> {marketCap} </td>
+              <td><strong> Total Market Cap: </strong> $ {Number(marketCap).toLocaleString("en")} USD </td>
               <td className="textAlignRight"><strong> Volume(24h): </strong> $ {Number(totalVolume).toLocaleString("en")} USD </td>
           </tr>
         </tbody>
