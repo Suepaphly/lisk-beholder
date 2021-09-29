@@ -58,7 +58,7 @@ const App = () => {
     		<br />
 		<img src="https://i.imgur.com/xrUdjFQ.png" alt="badges" />:<strong> Green Drake</strong> - Awarded for the creation of dragon wizardry that supports other delegates.
 		<br />
-		<img src="https://i.imgur.com/gKRnZdK.gif" alt="badges" />:<strong> Tool Master</strong> - Crafter of many blockchain tools located at lisk.support
+		<img src="https://i.imgur.com/iXCzQH5.gif" alt="badges" />:<strong> Tool Master</strong> - Crafter of many blockchain tools located at lisk.support
 		<br />
                 <img src="https://i.imgur.com/rpA3i6t.png" alt="badges" />:<strong> Enhanced Gains </strong> - This Delegate excludes their self-vote which increases the voters rewards.
                 <br /> 
