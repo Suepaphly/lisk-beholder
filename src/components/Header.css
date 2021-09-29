@@ -1,6 +1,7 @@
 .Header {
   text-align: center;
   font-size: 28pt;
+  font-family: 'Goldman', cursive;
 }
 @media (max-width: 768px) {
   .Header {
