@@ -52,7 +52,7 @@ for (let i = 0; i < 50000; i++) {
     }).catch(err => {
       console.error(err);
       return null;
-    });
+    })
   )
 }
   
