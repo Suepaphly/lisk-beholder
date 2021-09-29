@@ -174,16 +174,16 @@ const buildTableData = delegates =>
 
       }      
     }
-    const { badges } = barr;        
-    console.log(badges);
+    const { badges } = barr;       
     
     for (let i = 0; i < data.dpos.sentVotes.length; i++) {
       var sorted = [];
       var count = 0;
       if(data.dpos.sentVotes[i].delegateAddress == data.summary.address){
         count += data.dpos.sentVotes[i].amount;
+        console.log(data.summary.username);
+        console.log(data.dpos.sentVotes[i]);
       }
-      console.log(data.dpos.sentVotes[i]);
     }
     
     sorted["amount"] = count;
