@@ -32,9 +32,9 @@ const App = () => {
     const nodeInfo = await fetchNodeInfo();
     const price = await fetchPriceInfo();
     const cgi = await fetchCGInfo();
-    const marketCap = cgi.data.market_data.market_cap.usd;
-    const circSupply = cgi.data.market_data.circulation_supply;
-    const totalVolume = cgi.data.market_data.total_volume.usd;
+    const marketCap = cgi.market_data.market_cap.usd;
+    const circSupply = cgi.market_data.circulation_supply;
+    const totalVolume = cgi.market_data.total_volume.usd;
     
 
     setForgers(forgerStats.slice(0, 3));
