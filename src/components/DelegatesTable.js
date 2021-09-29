@@ -15,6 +15,7 @@ const columns = [
     title: "Rank",
     dataIndex: "rank",
     sorter: (a, b) => a.rank - b.rank,
+    responsive: ["xxl"],
   },
   {
     key: "username",
