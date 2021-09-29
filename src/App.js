@@ -32,7 +32,7 @@ const App = () => {
 
     setForgers(forgerStats.slice(0, 3));
     setNodeInfo(nodeInfo);
-    setPrice(price.toFixed(2));
+    setPrice(price);
     console.log(cmc);
   };
 
