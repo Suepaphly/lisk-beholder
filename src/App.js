@@ -29,13 +29,12 @@ const App = () => {
     const forgerStats = await fetchForgerStats();
     const nodeInfo = await fetchNodeInfo();
     const price = await fetchPriceInfo();
-    const totalLocked = await fetchLockedInfo();
     const totalSupply = await fetchSupplyInfo();
 
     setForgers(forgerStats.slice(0, 3));
     setNodeInfo(nodeInfo);
     setPrice(price);
-    setLockedInfo(totalLocked);
+    setLockedInfo(totalSupply);
     setSupplyInfo(totalSupply);
   };
 
