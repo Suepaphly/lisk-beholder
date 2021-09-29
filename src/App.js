@@ -56,7 +56,7 @@ const App = () => {
     		<br />
 		<img src="https://i.imgur.com/3SpsU2a.png" alt="badges" />:<strong> Red Gem</strong> - This Delegate is not actively forging. 
     		<br />
-		<img src="https://i.imgur.com/xrUdjFQ.png" alt="badges" />:<strong> Green Drake</strong> - Awarded for the creation of dragon wizardry that supports other delegates.
+		<img src="https://i.imgur.com/6K5rnE7.png" alt="badges" />:<strong> Green Drake</strong> - Awarded for the creation of dragon wizardry which supports other Lisk delegates.
 		<br />
 		<img src="https://i.imgur.com/iXCzQH5.gif" alt="badges" />:<strong> Tool Master</strong> - Crafter of many blockchain tools located at lisk.support
 		<br />
