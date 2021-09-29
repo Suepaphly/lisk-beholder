@@ -13,7 +13,15 @@ const Statistics = ({ forgers, nodeInfo }) => {
               {forgers.map(
                 (forger, i) => `${forger.username}${i !== forgers.length - 1 ? ", " : ""}`
               )}
-            </td>
+            </td>            
+          </tr>
+          <tr>
+              <td><strong> Price: </strong> {price} </td>
+              <td className="textAlignRight"><strong> Total Supply: </strong> {totalSupply} </td>
+          </tr>
+          <tr>
+              <td><strong> Total Market Cap: </strong> {marketCap} </td>
+              <td className="textAlignRight"><strong> Total Locked: </strong> {totalLocked} </td>
           </tr>
         </tbody>
       </table>
