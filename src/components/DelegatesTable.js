@@ -183,7 +183,7 @@ const buildTableData = delegates =>
     var self = Number(sorted.amount);
     var total = Number(data.dpos.delegate.totalVotesReceived / 100000000);
     var perc = total/(self);
-    perc = perc*100;
+    perc = perc*10;
     perc = perc.toFixed(0);
     perc = String(perc);
     perc += "%";    
