@@ -18,7 +18,7 @@ const columns = [
   },
   {
     key: "username",
-    title: "Username",
+    title: "Delegate",
     dataIndex: "username",
     sorter: (a, b) => {
       if (a.username < b.username) return -1;
@@ -82,7 +82,8 @@ const columns = [
     title: "Effective Weight",
     dataIndex: "voteWeight",
     sorter: (a, b) => a.voteWeight - b.voteWeight,
-    render: value => `${value.toLocaleString("en")} LSK`,
+    render: value => `${value.toLocaleString("en")} LSK`,    
+    responsive: ["xxl"],
   },
   {
     key: "amount",
