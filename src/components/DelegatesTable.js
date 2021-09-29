@@ -85,8 +85,7 @@ const columns = [
     title: "Effective Weight",
     dataIndex: "voteWeight",
     sorter: (a, b) => a.voteWeight - b.voteWeight,
-    render: value => `${value.toLocaleString("en")} LSK`,    
-    responsive: ["xxl"],
+    render: value => `${value.toLocaleString("en")} LSK`,   
   },
   {
     key: "amount",
@@ -94,7 +93,6 @@ const columns = [
     dataIndex: "amount",
     sorter: (a, b) => a.amount - b.amount,
     render: value => `${value.toLocaleString("en")} LSK`,
-    responsive: ["xl"],
   },
   {
     key: "voteCapacity",
