@@ -171,7 +171,7 @@ const buildTableData = delegates =>
       var sorted = [];
       var count = 0;
       if(data.dpos.sentVotes[i].delegateAddress == data.summary.address){
-        count += data.dpos.sentVotes[i].amount;
+        count = count + (data.dpos.sentVotes[i].amount / 10000000);
         console.log(data.summary.username);
         console.log(data.dpos.sentVotes[i].delegateAddress == data.summary.address);
         console.log(data.dpos.sentVotes[i]);
@@ -183,7 +183,7 @@ const buildTableData = delegates =>
     const { amount } = sorted;    
     
     
-    var self = Number(sorted.amount / 10000000);
+    var self = Number(sorted.amount);
     var total = Number(data.dpos.delegate.totalVotesReceived / 100000000);
     var perc = total/(self);
     perc = perc*100;
@@ -271,7 +271,7 @@ const buildTableData = delegates =>
       address,
       totalVotesReceived: Number(totalVotesReceived / 100000000),
       voteWeight: Number(voteWeight / 100000000),
-      amount: Number(amount / 100000000),
+      amount: Number(amount),
       producedBlocks,
       voteCapacity,
       sharePercent,
