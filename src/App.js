@@ -13,7 +13,7 @@ const App = () => {
   const [forgers, setForgers] = useState([]);
   const [nodeInfo, setNodeInfo] = useState(null);
   const [price, setPrice] = useState(null);
-  const [cmc, setCMC] = useState(null);
+  const [cgi, setCGI] = useState(null);
 
   useEffect(() => {
     const intervalId = setInterval(refreshStats, statsRefreshRate);
@@ -28,11 +28,12 @@ const App = () => {
     const forgerStats = await fetchForgerStats();
     const nodeInfo = await fetchNodeInfo();
     const price = await fetchPriceInfo();
-    const cmc = await fetchCGInfo();
+    const cgi = await fetchCGInfo();
 
     setForgers(forgerStats.slice(0, 3));
     setNodeInfo(nodeInfo);
     setPrice(price);
+    setCGI(cgi);
   };
 
   return (
