@@ -1,9 +1,7 @@
 import { node } from "../config/config.json";
-import { api_key } from "../config/cmc.json";
+import { key } from "../config/cmc.json";
 import axios from "axios";
 
-const CoinMarketCap = require('coinmarketcap-api');
-const client = new CoinMarketCap(api_key);
 
 
 export const fetchForgerStats = () =>
@@ -41,12 +39,16 @@ export const fetchPriceInfo = () =>
       return null;
     });
 
-export const fetchCMCInfo = () =>
+export const fetchCMCInfo = () => {
+  
+const CoinMarketCap = require('coinmarketcap-api');
+const client = new CoinMarketCap(key);
+  
   client
     .getQuotes({symbol: 'LSK'})
     .then(res => res.data.data)
     .catch(err => {
       console.error(err);
       return null;
-    });
+    })};
 
