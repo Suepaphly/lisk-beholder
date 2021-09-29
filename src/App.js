@@ -43,7 +43,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <Header nodeInfo={nodeInfo} />
-       <Statistics forgers={forgers} nodeInfo={nodeInfo} />
+       <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} totalLocked={totalLocked} totalSupply={totalSupply} />
 	<DelegatesTable />
 	      <div className="legend" ><br /><br />
 		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
