@@ -118,16 +118,7 @@ const buildTableData = delegates =>
       producedBlocks,
       username,
     } = data.dpos.delegate;
-    
-    /*
-    var standby = [];    
-    standby["rank"] = "Standby";
-    if(data.dpos.delegate.rank < 102){
-      standby["rank"] = data.dpos.delegate.rank;
-    }    
-    const { rank } = standby;
-    */
-    
+        
     
     
     var powerUsers = [{
@@ -182,7 +173,9 @@ const buildTableData = delegates =>
       if(data.dpos.sentVotes[i].delegateAddress == data.summary.address){
         count += data.dpos.sentVotes[i].amount;
         console.log(data.summary.username);
+        console.log(data.dpos.sentVotes[i].delegateAddress == data.summary.address);
         console.log(data.dpos.sentVotes[i]);
+        console.log(count);
       }
     }
     
