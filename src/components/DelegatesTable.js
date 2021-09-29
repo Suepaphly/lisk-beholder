@@ -167,9 +167,10 @@ const buildTableData = delegates =>
     }
     const { badges } = barr;       
     
+    
+    var sorted = [];
+    var count = 0;    
     for (let i = 0; i < data.dpos.sentVotes.length; i++) {
-      var sorted = [];
-      var count = 0;
       if(data.dpos.sentVotes[i].delegateAddress == data.summary.address){
         count = count + (data.dpos.sentVotes[i].amount / 100000000);
         console.log(data.summary.username);
