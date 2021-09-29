@@ -41,7 +41,7 @@ export const fetchPriceInfo = () =>
       return null;
     });
 
-export const getCMCInfo = () =>
+export const fetchCMCInfo = () =>
   client
     .getQuotes({symbol: 'LSK'})
     .then(res => res.data.data)
