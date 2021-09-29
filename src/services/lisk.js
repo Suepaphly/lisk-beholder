@@ -40,8 +40,11 @@ export const fetchPriceInfo = () =>
       return null;
     });
 
-export const fetchCMCInfo = () => {
-const client = new CoinMarketCap(key)
-client.getQuotes({id: '1'}).then(console.log).catch(console.error)
-};
-
+export const fetchCGInfo = () => 
+  axios
+    .get("https://api.coingecko.com/api/v3/coins/lisk?localization=false&community_data=false&developer_data=false")
+    .then(res => res.data)
+    .catch(err => {
+      console.error(err);
+      return null;
+    });
