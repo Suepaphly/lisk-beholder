@@ -49,11 +49,11 @@ for (let i = 0; i < 50000; i++) {
       for(let y = 0; y < res.data.data.dpos.sentVotes.length; y++){
            votes = votes + (res.data.data.dpos.sentVotes[y].amount / 100000000);
       }
-    })
-  ).catch(err => {
+    }).catch(err => {
       console.error(err);
       return null;
     });
+  )
 }
   
 Promise.all(promises).then(() => [{"total":balance}, {"locked":votes}])};
