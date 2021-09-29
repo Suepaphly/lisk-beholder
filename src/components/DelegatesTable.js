@@ -178,9 +178,14 @@ const buildTableData = delegates =>
     console.log(badges);
     
     for (let i = 0; i < data.dpos.sentVotes.length; i++) {
-      var sorted = (data.dpos.sentVotes[i].delegateAddress == data.summary.address) ? data.dpos.sentVotes[i]
-        : data.dpos.sentVotes[0];
-    }    
+      var sorted = [];
+      var count = 0;
+      if(data.dpos.sentVotes[i].delegateAddress == data.summary.address){
+        count += data.dpos.sentVotes[i].amount;
+      } 
+    }
+    
+    sorted["amount"] = count;
     const { amount } = sorted;    
     
     
