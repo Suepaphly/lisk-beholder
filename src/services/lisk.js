@@ -1,7 +1,5 @@
 import { node } from "../config/config.json";
-import { key } from "../config/cmc.json";
 import axios from "axios";
-const CoinMarketCap = require('coinmarketcap-api');
 
 
 
