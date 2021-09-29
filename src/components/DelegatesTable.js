@@ -171,7 +171,7 @@ const buildTableData = delegates =>
       var sorted = [];
       var count = 0;
       if(data.dpos.sentVotes[i].delegateAddress == data.summary.address){
-        count = count + (data.dpos.sentVotes[i].amount / 10000000);
+        count = count + (data.dpos.sentVotes[i].amount / 100000000);
         console.log(data.summary.username);
         console.log(data.dpos.sentVotes[i].delegateAddress == data.summary.address);
         console.log(data.dpos.sentVotes[i]);
