@@ -1,5 +1,6 @@
 import { node } from "../config/config.json";
 import { key } from "../config/cmc.json";
+const CoinMarketCap = require('coinmarketcap-api')
 import axios from "axios";
 
 
@@ -40,12 +41,7 @@ export const fetchPriceInfo = () =>
     });
 
 export const fetchCMCInfo = () => {
-    axios
-    .get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/map?CMC_PRO_API_KEY=' + key)
-    .then(res => res.data)
-    .catch(err => {
-      console.error(err);
-      return null;
-    });
+const client = new CoinMarketCap(key)
+client.getQuotes({id: '1'}).then(console.log).catch(console.error)
 };
 
