@@ -3,7 +3,7 @@ import { api_key } from "../config/cmc.json";
 import axios from "axios";
 
 const CoinMarketCap = require('coinmarketcap-api');
-const client = new CoinMarketCap(apiKey);
+const client = new CoinMarketCap(api_key);
 
 
 export const fetchForgerStats = () =>
