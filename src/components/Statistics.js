@@ -16,12 +16,12 @@ const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolu
             </td>            
           </tr>
           <tr>
-              <td><strong> Price: </strong> {price} </td>
-              <td className="textAlignRight"><strong> Circulating Supply: </strong> {circSupply} </td>
+              <td><strong> Price: </strong> $ {Number(price).toFixed(2)} USD (from Kraken) </td>
+              <td className="textAlignRight"><strong> Circulating Supply: </strong> {Number(circSupply).toLocaleString("en")} LSK </td>
           </tr>
           <tr>
               <td><strong> Total Market Cap: </strong> {marketCap} </td>
-              <td className="textAlignRight"><strong> Volume(24h): </strong> {totalVolume} </td>
+              <td className="textAlignRight"><strong> Volume(24h): </strong> $ {Number(totalVolume).toLocaleString("en")} USD </td>
           </tr>
         </tbody>
       </table>
