@@ -1,7 +1,7 @@
 import React from "react";
 import "./Statistics.css";
 
-const Statistics = ({ forgers, nodeInfo }) => {
+const Statistics = ({ forgers, nodeInfo, price, totalLocked, totalSupply }) => {
   return (
     <div>
       <table className="statsTable">
@@ -20,7 +20,7 @@ const Statistics = ({ forgers, nodeInfo }) => {
               <td className="textAlignRight"><strong> Total Supply: </strong> {totalSupply} </td>
           </tr>
           <tr>
-              <td><strong> Total Market Cap: </strong> {marketCap} </td>
+              <td><strong> Total Market Cap: </strong> {totalSupply*price} </td>
               <td className="textAlignRight"><strong> Total Locked: </strong> {totalLocked} </td>
           </tr>
         </tbody>
