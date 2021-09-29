@@ -37,11 +37,23 @@ export const fetchPriceInfo = () =>
     });
 
 
-export const fetchSupplyInfo = (offset) =>
-  axios
-    .get(node + "/api/v2/accounts?sort=balance:desc&limit=100&offset=" + offset)
-    .then(res => res.data.data)
-    .catch(err => {
+export const fetchSupplyInfo = () => {
+
+let promises = [];
+let balance = 0;
+let votes = 0;
+for (i = 0; i < 50000; i++) {
+  promises.push(
+    axios.get(node + "/api/v2/accounts?sort=balance:desc&limit=100&offset=" + i).then(res => {
+      balance = balance + (res.data.data.summary.balance / 100000000);
+      for(y = 0; y < res.data.data.dpos.sentVotes.length; y++){
+           votes = votes + (res.data.data.dpos.sentVotes[y].amount / 100000000);
+      }
+    })
+  ).catch(err => {
       console.error(err);
       return null;
     });
+}
+  
+Promise.all(promises).then(() => [{"total":balance}, {"locked":votes}])};
