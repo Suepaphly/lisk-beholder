@@ -68,3 +68,5 @@ Check to see if it's online with:
 You can stop the process using ```pm2 stop beholder``` and start it using ```pm2 start beholder```.
 
 Now visit the IP address of your server in a web browser, like this: http://45.63.105.137:8080/  and your Lisk Beholder should be available. 
+
+This project is based on the lisk-mini-explorer by Korben3: https://github.com/Korben3/lisk-mini-explorer
