@@ -14,6 +14,9 @@ const App = () => {
   const [nodeInfo, setNodeInfo] = useState(null);
   const [price, setPrice] = useState(null);
   const [cgi, setCGI] = useState(null);
+  const [marketCap, setmarketCap] = useState(null);
+  const [circSupply, setcircSupply] = useState(null);
+  const [totalVolume, settotalVolume] = useState(null);
 
   useEffect(() => {
     const intervalId = setInterval(refreshStats, statsRefreshRate);
@@ -29,20 +32,24 @@ const App = () => {
     const nodeInfo = await fetchNodeInfo();
     const price = await fetchPriceInfo();
     const cgi = await fetchCGInfo();
+    const marketCap = cgi.data.market_data.market_cap.usd;
+    const circSupply = cgi.data.market_data.circulation_supply;
+    const totalVolume = cgi.data.market_data.total_volume.usd;
+    
 
     setForgers(forgerStats.slice(0, 3));
     setNodeInfo(nodeInfo);
     setPrice(price);
-    console.log(cgi);
-    console.log(cgi.data);
-    console.log(cgi.market_data);
+    setmarketCap(marketCap);
+    setcircSupply(circSupply);
+    settotalVolume(totalVolume);
   };
 
   return (
     <div className="App">
       <div className="container">
         <Header nodeInfo={nodeInfo} />
-       <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} />
+       <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} marketCap={marketCap} circSupply={circSupply} totalVolume={totalVolume} />
 	<DelegatesTable />
 	      <div className="legend" ><br /><br />
 		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
