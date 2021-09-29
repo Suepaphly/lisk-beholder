@@ -33,14 +33,16 @@ const App = () => {
     setForgers(forgerStats.slice(0, 3));
     setNodeInfo(nodeInfo);
     setPrice(price);
-    setCGI(cgi);
+    console.log(cgi);
+    console.log(cgi.data);
+    console.log(cgi.market_data);
   };
 
   return (
     <div className="App">
       <div className="container">
         <Header nodeInfo={nodeInfo} />
-       <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} marketCap={cgi.data.market_data.market_cap.usd} circSupply={cgi.data.market_data.circulation_supply} totalVolume={cgi.data.market_data.total_volume.usd} />
+       <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} />
 	<DelegatesTable />
 	      <div className="legend" ><br /><br />
 		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
