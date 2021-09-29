@@ -182,7 +182,8 @@ const buildTableData = delegates =>
       var count = 0;
       if(data.dpos.sentVotes[i].delegateAddress == data.summary.address){
         count += data.dpos.sentVotes[i].amount;
-      } 
+      }
+      console.log(data.dpos.sentVotes[i]);
     }
     
     sorted["amount"] = count;
