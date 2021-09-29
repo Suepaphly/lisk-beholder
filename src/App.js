@@ -34,8 +34,8 @@ const App = () => {
     setForgers(forgerStats.slice(0, 3));
     setNodeInfo(nodeInfo);
     setPrice(price);
-    setLockedInfo(totalSupply);
-    setSupplyInfo(totalSupply);
+    setLockedInfo(totalSupply.locked);
+    setSupplyInfo(totalSupply.total);
   };
 
   return (
