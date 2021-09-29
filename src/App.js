@@ -52,12 +52,14 @@ const App = () => {
        <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} marketCap={marketCap} circSupply={circSupply} totalVolume={totalVolume} />
 	<DelegatesTable />
 	      <div className="legend" ><br /><br />
+		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
+    		<br />
+		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Red Gem</strong> - This Delegate is not actively forging. 
+    		<br />
 		<img src="https://i.imgur.com/xrUdjFQ.png" alt="badges" />:<strong> Green Drake</strong> - Awarded for the creation of dragon wizardry that supports other delegates.
 		<br />
 		<img src="https://i.imgur.com/gKRnZdK.gif" alt="badges" />:<strong> Tool Master</strong> - Crafter of many blockchain tools located at lisk.support
 		<br />
-		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
-    		<br />
                 <img src="https://i.imgur.com/rpA3i6t.png" alt="badges" />:<strong> Enhanced Gains </strong> - This Delegate excludes their self-vote which increases the voters rewards.
                 <br /> 
                 <img src="https://i.imgur.com/exk720m.png" alt="badges" />:<strong> Enhanced Value</strong> - Recognized for providing valuable contributions to the community.
