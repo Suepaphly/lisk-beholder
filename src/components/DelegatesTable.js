@@ -147,6 +147,7 @@ const buildTableData = delegates =>
 "tonyt908":     2000,
 "jong":         3000,
 "hirish":       2000,
+"cc001":        2000,
     }];
 
     var puser = data.dpos.delegate;
