@@ -12,6 +12,7 @@ import ReactTooltip from 'react-tooltip'
 const App = () => {
   const [forgers, setForgers] = useState([]);
   const [nodeInfo, setNodeInfo] = useState(null);
+  const [price, setPrice] = useState([]);
 
   useEffect(() => {
     const intervalId = setInterval(refreshStats, statsRefreshRate);
@@ -25,9 +26,11 @@ const App = () => {
   const refreshStats = async () => {
     const forgerStats = await fetchForgerStats();
     const nodeInfo = await fetchNodeInfo();
+    const priceInfo = await fetchPriceInfo();
 
     setForgers(forgerStats.slice(0, 3));
     setNodeInfo(nodeInfo);
+    setPrice(price);
   };
 
   return (
