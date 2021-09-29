@@ -2,9 +2,6 @@
 A Delegate list for lisk-core3
 
 
-# lisk mini explorer
-
-
 Demo: http://liskbeholder.io
 
 
