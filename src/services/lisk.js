@@ -30,7 +30,7 @@ export const fetchDelegates = (offset) =>
 export const fetchPriceInfo = () =>
   axios
     .get(node + "/api/v2/market/prices")
-    .then(res => res.data.data[3].rate)
+    .then(res => res.data.data[2].rate)
     .catch(err => {
       console.error(err);
       return null;
