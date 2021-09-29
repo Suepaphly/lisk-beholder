@@ -6,7 +6,7 @@ import Statistics from "./components/Statistics";
 import Footer from "./components/Footer";
 import React, { useState, useEffect } from "react";
 import { statsRefreshRate } from "./config/config.json";
-import { fetchForgerStats, fetchNodeInfo } from "./services/lisk";
+import { fetchForgerStats, fetchNodeInfo, fetchPriceInfo, fetchLockedInfo, fetchSupplyInfo } from "./services/lisk";
 import ReactTooltip from 'react-tooltip'
 
 const App = () => {
