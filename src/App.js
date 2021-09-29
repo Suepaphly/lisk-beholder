@@ -54,7 +54,7 @@ const App = () => {
 	      <div className="legend" ><br /><br />
 		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
     		<br />
-		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Red Gem</strong> - This Delegate is not actively forging. 
+		<img src="https://i.imgur.com/3SpsU2a.png" alt="badges" />:<strong> Red Gem</strong> - This Delegate is not actively forging. 
     		<br />
 		<img src="https://i.imgur.com/xrUdjFQ.png" alt="badges" />:<strong> Green Drake</strong> - Awarded for the creation of dragon wizardry that supports other delegates.
 		<br />
