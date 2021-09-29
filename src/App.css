@@ -1,0 +1,39 @@
+body {
+  background-color: #000000;
+  background-image: url("assets/bg.png");
+  font-size: 100%;
+  font-family: "Open-Sans", sans-serif;
+  color: #351B4B !important;
+  margin: 0rem;
+}
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+a:visited {
+  color: #FC99FF;
+  text-decoration: strong;
+}
+a:hover {
+  color: #351B4B;
+}
+a:active {
+  color: #351B4B;
+}
+.container {
+  background: #EAD6BF;
+  width: 75%;
+  box-sizing: border-box;
+  min-height: 600px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  padding: 5px;
+  padding-top: 30px;
+  overflow-y: hidden;
+  box-shadow: 0px 0px 5px 1px #CEB4E4;
+}
+.legend {
+  padding-left: 5%;
+}

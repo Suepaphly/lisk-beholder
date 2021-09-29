@@ -1,0 +1,12 @@
+.Header {
+  text-align: center;
+  font-size: 28pt;
+}
+@media (max-width: 768px) {
+  .Header {
+    font-size: 24pt;
+  }
+}
+.sub {
+  font-size: 12pt;
+}

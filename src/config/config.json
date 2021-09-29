@@ -1,0 +1,5 @@
+{
+  "node": "http://liskbeholder.io:9901",
+  "statsRefreshRate": 10000,
+  "delegatesRefreshRate": 10000
+}
