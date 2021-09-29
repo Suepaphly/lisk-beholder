@@ -39,7 +39,7 @@ export const fetchPriceInfo = () =>
 
 export const fetchSupplyInfo = (offset) =>
   axios
-    .get(node + "/api/v2/accounts?limit=100&offset=" + offset)
+    .get(node + "/api/v2/accounts?sort=balance:desc&limit=100&offset=" + offset)
     .then(res => res.data.data)
     .catch(err => {
       console.error(err);
