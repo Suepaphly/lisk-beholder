@@ -173,10 +173,6 @@ const buildTableData = delegates =>
     for (let i = 0; i < data.dpos.sentVotes.length; i++) {
       if(data.dpos.sentVotes[i].delegateAddress == data.summary.address){
         count = count + (data.dpos.sentVotes[i].amount / 100000000);
-        console.log(data.summary.username);
-        console.log(data.dpos.sentVotes[i].delegateAddress == data.summary.address);
-        console.log(data.dpos.sentVotes[i]);
-        console.log(count);
       }
     }
     
