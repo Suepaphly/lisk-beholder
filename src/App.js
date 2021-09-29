@@ -13,8 +13,6 @@ const App = () => {
   const [forgers, setForgers] = useState([]);
   const [nodeInfo, setNodeInfo] = useState(null);
   const [price, setPrice] = useState(null);
-  const [totalLocked, setLockedInfo] = useState(null);
-  const [totalSupply, setSupplyInfo] = useState(null);
 
   useEffect(() => {
     const intervalId = setInterval(refreshStats, statsRefreshRate);
@@ -29,20 +27,17 @@ const App = () => {
     const forgerStats = await fetchForgerStats();
     const nodeInfo = await fetchNodeInfo();
     const price = await fetchPriceInfo();
-    const totalSupply = await fetchSupplyInfo();
 
     setForgers(forgerStats.slice(0, 3));
     setNodeInfo(nodeInfo);
     setPrice(price);
-    setLockedInfo(totalSupply.locked);
-    setSupplyInfo(totalSupply.total);
   };
 
   return (
     <div className="App">
       <div className="container">
         <Header nodeInfo={nodeInfo} />
-       <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} totalLocked={totalLocked} totalSupply={totalSupply} />
+       <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} />
 	<DelegatesTable />
 	      <div className="legend" ><br /><br />
 		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
