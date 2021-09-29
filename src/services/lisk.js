@@ -1,6 +1,7 @@
 import { node } from "../config/config.json";
 import { key } from "../config/cmc.json";
 import axios from "axios";
+const rp = require('request-promise');
 
 
 
@@ -41,14 +42,26 @@ export const fetchPriceInfo = () =>
 
 export const fetchCMCInfo = () => {
   
-const CoinMarketCap = require('coinmarketcap-api');
-const client = new CoinMarketCap(key);
-  
-  client
-    .getQuotes({symbol: 'LSK'})
-    .then(res => res.data.data)
-    .catch(err => {
-      console.error(err);
-      return null;
-    })};
+const requestOptions = {
+  method: 'GET',
+  uri: 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
+  qs: {
+    'start': '1',
+    'limit': '5000',
+    'convert': 'USD'
+  },
+  headers: {
+    'X-CMC_PRO_API_KEY': key
+  },
+  json: true,
+  gzip: true
+};
+
+rp(requestOptions).then(response => {
+  console.log('API call response:', response);
+}).catch((err) => {
+  console.log('API call error:', err.message);
+});
+
+};
 
