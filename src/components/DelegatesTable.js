@@ -50,6 +50,7 @@ const columns = [
     : value == 4000 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span></span>
     : value == 5000 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
     : value == 6000 ? <span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
+    : value == 6500 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Green Drake - Awarded for the creation of dragon wizardry that supports other delegates." ><img src="https://i.imgur.com/xrUdjFQ.png" /></span></span>
     : value == 7000 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
     : value == 8000 ? <span><span data-tip="Ultrafresh Powerup - Voting for this delegate provides Lisk with grassroots marketing and the development of NFTs and Gamefi."><img src="https://i.imgur.com/RhivWyY.gif" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span></span>
     : null,
@@ -130,7 +131,6 @@ const buildTableData = delegates =>
 "ultrafresh":   8000,
 "stellardynamic_vote": 5000,
 "mrv":  4000,
-"gr33ndrag0n":  2000,
 "jeevanio_pool":   1000,
 "gregorst":     1000,
 "carbonara":    4000,
@@ -149,6 +149,7 @@ const buildTableData = delegates =>
 "jong":         3000,
 "hirish":       2000,
 "cc001":        2000,
+"gr33ndrag0n":  6500,
     }];
 
     var puser = data.dpos.delegate;
