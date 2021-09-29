@@ -8,11 +8,11 @@ const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolu
         <tbody>
           <tr>
             <td><strong> Height: </strong>{nodeInfo?.height || "N/A"} </td>           
-            <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} USD (from Kraken) </td>
+            <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from Kraken) </td>
           </tr>
           <tr>
               <td><strong> Circulating Supply: </strong> {Number(circSupply).toLocaleString("en")} LSK </td>
-              <td className="textAlignRight"><strong> Total Market Cap: </strong> $ {Number(marketCap).toLocaleString("en")} USD </td>
+              <td className="textAlignRight"><strong> Total Market Cap: </strong> $ {Number(marketCap).toLocaleString("en")} </td>
           </tr>
           <tr>
             
@@ -22,7 +22,7 @@ const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolu
                 (forger, i) => `${forger.username}${i !== forgers.length - 1 ? ", " : ""}`
               )}
             </td> 
-              <td className="textAlignRight"><strong> Volume(24h): </strong> $ {Number(totalVolume).toLocaleString("en")} USD </td>
+              <td className="textAlignRight"><strong> Volume(24h): </strong> $ {Number(totalVolume).toLocaleString("en")} </td>
           </tr>
         </tbody>
       </table>
