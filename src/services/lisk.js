@@ -26,3 +26,22 @@ export const fetchDelegates = (offset) =>
         .catch(err => {
         console.error(err)
       });
+
+export const fetchPriceInfo = () =>
+  axios
+    .get(node + "/api/v2/market/prices)
+    .then(res => res.data.data)
+    .catch(err => {
+      console.error(err);
+      return null;
+    });
+
+
+export const fetchSupplyInfo = (offset) =>
+  axios
+    .get(node + "/api/v2/accounts?limit=100&offset=" + offset)
+    .then(res => res.data.data)
+    .catch(err => {
+      console.error(err);
+      return null;
+    });
