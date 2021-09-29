@@ -82,7 +82,7 @@ const columns = [
   },
   {
     key: "voteWeight",
-    title: "Effective Weight",
+    title: "Vote Weight",
     dataIndex: "voteWeight",
     sorter: (a, b) => a.voteWeight - b.voteWeight,
     render: value => `${value.toLocaleString("en")} LSK`,   
