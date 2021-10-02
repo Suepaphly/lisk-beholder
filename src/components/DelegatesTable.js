@@ -150,7 +150,7 @@ const buildTableData = delegates =>
 "cc001":        2000,
 "gr33ndrag0n":  6500,
 "punkrock": 2000,
-"beneval": 1000,
+"benevale": 1000,
     }];
 
     var puser = data.dpos.delegate;
