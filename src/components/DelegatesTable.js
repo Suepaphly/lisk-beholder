@@ -151,6 +151,7 @@ const buildTableData = delegates =>
 "gr33ndrag0n":  6500,
 "punkrock": 2000,
 "benevale": 1000,
+"helpinghands": 1000,
     }];
 
     var puser = data.dpos.delegate;
@@ -250,6 +251,7 @@ const buildTableData = delegates =>
 "ilgio":        50,
 "eddedw":       0,
 "hitman":       50,
+      "helpinghands": 60,
       }];
     
     var zero = [];
