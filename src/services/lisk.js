@@ -1,5 +1,6 @@
-const { apiClient } = require('@liskhq/lisk-client');
+
 import axios from "axios";
+const { apiClient } = require('@liskhq/lisk-client');
 let clientCache;
 
 export const getClient = async () => {
