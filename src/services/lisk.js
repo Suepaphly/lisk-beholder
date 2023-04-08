@@ -1,5 +1,13 @@
 import axios from "axios";
 
+
+const message = JSON.stringify({
+  jsonrpc: "2.0",
+  id: 1,
+  method: "app:getNodeInfo",
+  params: {}
+});
+
 const request = async (method, params) => new Promise(resolve => {
     const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
 
@@ -20,7 +28,7 @@ export const useClient = async () => {
 };
 
 export const fetchForgerStats = async () => {
-    const forgerStats = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
+    const forgerStats = await request(message);
     
     console.log(forgerStats);
     const forgerStatsArray = JSON.parse(forgerStats);
@@ -28,7 +36,7 @@ export const fetchForgerStats = async () => {
 };
 
 export const fetchNodeInfo = async () => {
-    const nodeInfo = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
+    const nodeInfo = await request(message);
     
     console.log(nodeInfo);
     const nodeInfoArray = JSON.parse(nodeInfo);
@@ -36,7 +44,7 @@ export const fetchNodeInfo = async () => {
 };
 
 export const fetchDelegates = async () => {
-    const delegates = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
+    const delegates = await request(message);
     
     console.log(delegates);
     const delegatesArray = JSON.parse(delegates);
@@ -44,7 +52,7 @@ export const fetchDelegates = async () => {
 };
 
 export const fetchPriceInfo = async () => {
-    const priceInfo = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
+    const priceInfo = await request(message);
     
     const priceInfoArray = JSON.parse(priceInfo);    
     console.log(priceInfo);
