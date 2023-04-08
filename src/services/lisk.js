@@ -1,6 +1,27 @@
 import axios from "axios";
 
-const message = JSON.stringify({
+const nodeInfoMessge = JSON.stringify({
+  jsonrpc: "2.0",
+  id: 1,
+  method: "app:getNodeInfo",
+  params: {}
+});
+
+const forgerStatsMessage = JSON.stringify({
+  jsonrpc: "2.0",
+  id: 1,
+  method: "app:getNodeInfo",
+  params: {}
+});
+
+const delegatesMessage = JSON.stringify({
+  jsonrpc: "2.0",
+  id: 1,
+  method: "app:getNodeInfo",
+  params: {}
+});
+
+const priceInfoMessage = JSON.stringify({
   jsonrpc: "2.0",
   id: 1,
   method: "app:getNodeInfo",
@@ -31,7 +52,7 @@ export const fetchForgerStats = async () => {
 export const fetchNodeInfo = async () => {
   const nodeInfoPromise = new Promise((resolve, reject) => {
     socket.onopen = function (evt) {
-      socket.send(message);
+      socket.send(nodeInfoMessge);
     };
     socket.onmessage = function (evt) {
       const nodeInfoArray = JSON.parse(evt.data);
