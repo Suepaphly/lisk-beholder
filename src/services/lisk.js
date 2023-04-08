@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = async (method, params) => new Promise(resolve => {
-    const socket = new WebSocket('ws://localhost:9901/ws');
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
 
     socket.onopen = () => {
         socket.send(JSON.stringify({ jsonrpc: '2.0', method, params }));
