@@ -8,10 +8,20 @@ const message = JSON.stringify({
   params: {}
 });
 
+const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+
 export const fetchForgerStats = async () => {
-  
-    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
-    const forgerStats = await socket.onopen = function(evt) { socket.send(message);  websocket.close();};
+
+  socket.onopen = function(evt) {
+    socket.send(message);
+    socket.close();
+  };
+
+  const forgerStats = await new Promise((resolve, reject) => {
+    socket.onmessage = function(evt) {
+      resolve(evt.data);
+    };
+  });
   
     console.log(message);
     console.log(forgerStats);
@@ -20,9 +30,17 @@ export const fetchForgerStats = async () => {
 };
 
 export const fetchNodeInfo = async () => {
-  
-    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
-    const nodeInfo = await socket.onopen = function(evt) { socket.send(message);  websocket.close();};
+
+  socket.onopen = function(evt) {
+    socket.send(message);
+    socket.close();
+  };
+
+  const nodeInfo = await new Promise((resolve, reject) => {
+    socket.onmessage = function(evt) {
+      resolve(evt.data);
+    };
+  });
     
     console.log(nodeInfo);
     const nodeInfoArray = JSON.parse(nodeInfo);
@@ -31,8 +49,16 @@ export const fetchNodeInfo = async () => {
 
 export const fetchDelegates = async () => {
   
-    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
-    const delegates = await socket.onopen = function(evt) { socket.send(message);  websocket.close();};
+  socket.onopen = function(evt) {
+    socket.send(message);
+    socket.close();
+  };
+
+  const delegates = await new Promise((resolve, reject) => {
+    socket.onmessage = function(evt) {
+      resolve(evt.data);
+    };
+  });
     
     console.log(delegates);
     const delegatesArray = JSON.parse(delegates);
@@ -41,8 +67,16 @@ export const fetchDelegates = async () => {
 
 export const fetchPriceInfo = async () => {
   
-    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
-    const priceInfo = await socket.onopen = function(evt) { socket.send(message);  websocket.close();};
+  socket.onopen = function(evt) {
+    socket.send(message);
+    socket.close();
+  };
+
+  const priceInfo = await new Promise((resolve, reject) => {
+    socket.onmessage = function(evt) {
+      resolve(evt.data);
+    };
+  });
     
     const priceInfoArray = JSON.parse(priceInfo);    
     console.log(priceInfo);
