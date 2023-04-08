@@ -21,33 +21,33 @@ export const useClient = async () => {
 
 export const fetchForgerStats = async () => {
     const forgerStats = await request('get.forgers', {});
-    // Do something with forgerStats
-    console.log(forgerStats);
-    return forgerStats;
+    const forgerStatsArray = JSON.parse(forgerStats);
+    console.log(forgerStatsArray);
+    return forgerStatsArray;
 };
 
 export const fetchNodeInfo = async () => {
     const nodeInfo = await request('get.network.status', {});
-    // Do something with nodeInfo
     
-    console.log(nodeInfo);
-    return nodeInfo;
+    const nodeInfoArray = JSON.parse(nodeInfo);
+    console.log(nodeInfoArray);
+    return nodeInfoArray;
 };
 
 export const fetchDelegates = async () => {
     const delegates = await request('get.blocks', { height: 123 });
-    // Do something with delegates
     
-    console.log(delegates);
-    return delegates;
+    const delegatesArray = JSON.parse(delegates);
+    console.log(delegatesArray);
+    return delegatesArray;
 };
 
 export const fetchPriceInfo = async () => {
     const priceInfo = await request('get.market.prices', {});
-    // Do something with priceInfo
     
-    console.log(priceInfo);
-    return priceInfo;
+    const priceInfoArray = JSON.parse(priceInfo);    
+    console.log(priceInfoArray);
+    return priceInfoArray;
 };
 
 export const fetchCGInfo = () =>
