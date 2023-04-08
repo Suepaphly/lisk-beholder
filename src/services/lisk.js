@@ -30,25 +30,6 @@ const priceInfoMessage = JSON.stringify({
 
 const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
 
-export const fetchForgerStats = async () => {
-  const forgerStatsPromise = new Promise((resolve, reject) => {
-    socket.onopen = function (evt) {
-      socket.send(message);
-    };
-    socket.onmessage = function (evt) {
-      const forgerStatsArray = JSON.parse(evt.data);
-      resolve(forgerStatsArray);
-    };
-    socket.onerror = function (evt) {
-      reject(evt);
-    };
-  });
-
-  const forgerStats = await forgerStatsPromise;
-  console.log(forgerStats);
-  return forgerStats;
-};
-
 export const fetchNodeInfo = async () => {
   const nodeInfoPromise = new Promise((resolve, reject) => {
     socket.onopen = function (evt) {
@@ -68,10 +49,35 @@ export const fetchNodeInfo = async () => {
   return nodeInfo;
 };
 
+
+
+
+export const fetchForgerStats = async () => {
+  const forgerStatsPromise = new Promise((resolve, reject) => {
+    socket.onopen = function (evt) {
+      socket.send(forgerStatsMessage);
+    };
+    socket.onmessage = function (evt) {
+      const forgerStatsArray = JSON.parse(evt.data);
+      resolve(forgerStatsArray);
+    };
+    socket.onerror = function (evt) {
+      reject(evt);
+    };
+  });
+
+  const forgerStats = await forgerStatsPromise;
+  console.log(forgerStats);
+  return forgerStats;
+};
+
+
+
+
 export const fetchDelegates = async () => {
   const delegatesPromise = new Promise((resolve, reject) => {
     socket.onopen = function (evt) {
-      socket.send(message);
+      socket.send(delegatesMessage);
     };
     socket.onmessage = function (evt) {
       const delegatesArray = JSON.parse(evt.data);
@@ -87,10 +93,13 @@ export const fetchDelegates = async () => {
   return delegates;
 };
 
+
+
+
 export const fetchPriceInfo = async () => {
   const priceInfoPromise = new Promise((resolve, reject) => {
     socket.onopen = function (evt) {
-      socket.send(message);
+      socket.send(priceInfoMessage);
     };
     socket.onmessage = function (evt) {
       const priceInfoArray = JSON.parse(evt.data);
