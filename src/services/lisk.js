@@ -21,24 +21,25 @@ export const useClient = async () => {
 
 export const fetchForgerStats = async () => {
     const forgerStats = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
-    const forgerStatsArray = JSON.parse(forgerStats);
+    
     console.log(forgerStats);
+    const forgerStatsArray = JSON.parse(forgerStats);
     return forgerStatsArray;
 };
 
 export const fetchNodeInfo = async () => {
     const nodeInfo = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
     
-    const nodeInfoArray = JSON.parse(nodeInfo);
     console.log(nodeInfo);
+    const nodeInfoArray = JSON.parse(nodeInfo);
     return nodeInfoArray;
 };
 
 export const fetchDelegates = async () => {
     const delegates = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
     
-    const delegatesArray = JSON.parse(delegates);
     console.log(delegates);
+    const delegatesArray = JSON.parse(delegates);
     return delegatesArray;
 };
 
