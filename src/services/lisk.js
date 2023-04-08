@@ -29,7 +29,7 @@ export const useClient = async () => {
 
 export const fetchForgerStats = async () => {
     const forgerStats = await request(message);
-    
+    console.log(message);
     console.log(forgerStats);
     const forgerStatsArray = JSON.parse(forgerStats);
     return forgerStatsArray;
