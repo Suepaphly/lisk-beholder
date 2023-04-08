@@ -8,21 +8,10 @@ const message = JSON.stringify({
   params: {}
 });
 
-
 export const fetchForgerStats = async () => {
-
-const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
   
-  socket.onopen = function(evt) {
-    socket.send(message);
-    socket.close();
-  };
-
-  const forgerStats = await new Promise((resolve, reject) => {
-    socket.onmessage = function(evt) {
-      resolve(evt.data);
-    };
-  });
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+    const forgerStats = await socket.onopen = function(evt) { socket.send(message);  websocket.close();};
   
     console.log(message);
     console.log(forgerStats);
@@ -31,19 +20,9 @@ const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
 };
 
 export const fetchNodeInfo = async () => {
-
-const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
   
-  socket.onopen = function(evt) {
-    socket.send(message);
-    socket.close();
-  };
-
-  const nodeInfo = await new Promise((resolve, reject) => {
-    socket.onmessage = function(evt) {
-      resolve(evt.data);
-    };
-  });
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+    const nodeInfo = await socket.onopen = function(evt) { socket.send(message);  websocket.close();};
     
     console.log(nodeInfo);
     const nodeInfoArray = JSON.parse(nodeInfo);
@@ -52,18 +31,8 @@ const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
 
 export const fetchDelegates = async () => {
   
-const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
-  
-  socket.onopen = function(evt) {
-    socket.send(message);
-    socket.close();
-  };
-
-  const delegates = await new Promise((resolve, reject) => {
-    socket.onmessage = function(evt) {
-      resolve(evt.data);
-    };
-  });
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+    const delegates = await socket.onopen = function(evt) { socket.send(message);  websocket.close();};
     
     console.log(delegates);
     const delegatesArray = JSON.parse(delegates);
@@ -72,18 +41,8 @@ const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
 
 export const fetchPriceInfo = async () => {
   
-const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
-  
-  socket.onopen = function(evt) {
-    socket.send(message);
-    socket.close();
-  };
-
-  const priceInfo = await new Promise((resolve, reject) => {
-    socket.onmessage = function(evt) {
-      resolve(evt.data);
-    };
-  });
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+    const priceInfo = await socket.onopen = function(evt) { socket.send(message);  websocket.close();};
     
     const priceInfoArray = JSON.parse(priceInfo);    
     console.log(priceInfo);
