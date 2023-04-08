@@ -8,10 +8,11 @@ const message = JSON.stringify({
   params: {}
 });
 
-const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
 
 export const fetchForgerStats = async () => {
 
+const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+  
   socket.onopen = function(evt) {
     socket.send(message);
     socket.close();
@@ -31,6 +32,8 @@ export const fetchForgerStats = async () => {
 
 export const fetchNodeInfo = async () => {
 
+const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+  
   socket.onopen = function(evt) {
     socket.send(message);
     socket.close();
@@ -49,6 +52,8 @@ export const fetchNodeInfo = async () => {
 
 export const fetchDelegates = async () => {
   
+const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+  
   socket.onopen = function(evt) {
     socket.send(message);
     socket.close();
@@ -66,6 +71,8 @@ export const fetchDelegates = async () => {
 };
 
 export const fetchPriceInfo = async () => {
+  
+const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
   
   socket.onopen = function(evt) {
     socket.send(message);
