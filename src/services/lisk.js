@@ -20,7 +20,7 @@ export const useClient = async () => {
 };
 
 export const fetchForgerStats = async () => {
-    const forgerStats = await request('get.forgers', {});
+    const forgerStats = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
     const forgerStatsArray = JSON.parse(forgerStats);
     console.log(forgerStats);
     return forgerStatsArray;
@@ -35,7 +35,7 @@ export const fetchNodeInfo = async () => {
 };
 
 export const fetchDelegates = async () => {
-    const delegates = await request('get.blocks', { height: 123 });
+    const delegates = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
     
     const delegatesArray = JSON.parse(delegates);
     console.log(delegates);
@@ -43,7 +43,7 @@ export const fetchDelegates = async () => {
 };
 
 export const fetchPriceInfo = async () => {
-    const priceInfo = await request('get.market.prices', {});
+    const priceInfo = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
     
     const priceInfoArray = JSON.parse(priceInfo);    
     console.log(priceInfo);
