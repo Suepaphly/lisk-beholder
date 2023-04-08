@@ -27,7 +27,7 @@ export const fetchForgerStats = async () => {
 };
 
 export const fetchNodeInfo = async () => {
-    const nodeInfo = await request('get.network.status', {});
+    const nodeInfo = await request('{"jsonrpc":"2.0","id":1,"method":"app:getNodeInfo","params":{}}');
     
     const nodeInfoArray = JSON.parse(nodeInfo);
     console.log(nodeInfoArray);
