@@ -8,27 +8,9 @@ const message = JSON.stringify({
   params: {}
 });
 
-const request = async (method, params) => new Promise(resolve => {
-    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
-
-    socket.onopen = () => {
-        socket.send(JSON.stringify({ jsonrpc: '2.0', method, params }));
-    };
-
-    socket.onmessage = (event) => {
-        const answer = JSON.parse(event.data);
-        socket.close();
-        resolve(answer);
-    };
-});
-
-export const useClient = async () => {
-    const data = await request('pluginAlias:eventAlias', {});
-    return data.info;
-};
-
 export const fetchForgerStats = async () => {
-    const forgerStats = await request(message);
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+    const forgerStats = await socket.send(message);
     console.log(message);
     console.log(forgerStats);
     const forgerStatsArray = JSON.parse(forgerStats);
@@ -36,7 +18,9 @@ export const fetchForgerStats = async () => {
 };
 
 export const fetchNodeInfo = async () => {
-    const nodeInfo = await request(message);
+  
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+    const nodeInfo = await socket.send(message);
     
     console.log(nodeInfo);
     const nodeInfoArray = JSON.parse(nodeInfo);
@@ -44,7 +28,9 @@ export const fetchNodeInfo = async () => {
 };
 
 export const fetchDelegates = async () => {
-    const delegates = await request(message);
+  
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+    const delegates = await socket.send(message);
     
     console.log(delegates);
     const delegatesArray = JSON.parse(delegates);
@@ -52,7 +38,9 @@ export const fetchDelegates = async () => {
 };
 
 export const fetchPriceInfo = async () => {
-    const priceInfo = await request(message);
+  
+    const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+    const priceInfo = await socket.send(message);
     
     const priceInfoArray = JSON.parse(priceInfo);    
     console.log(priceInfo);
