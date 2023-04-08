@@ -22,24 +22,31 @@ export const useClient = async () => {
 export const fetchForgerStats = async () => {
     const forgerStats = await request('get.forgers', {});
     // Do something with forgerStats
+    console.log(forgerStats);
     return forgerStats;
 };
 
 export const fetchNodeInfo = async () => {
     const nodeInfo = await request('get.network.status', {});
     // Do something with nodeInfo
+    
+    console.log(nodeInfo);
     return nodeInfo;
 };
 
 export const fetchDelegates = async () => {
     const delegates = await request('get.blocks', { height: 123 });
     // Do something with delegates
+    
+    console.log(delegates);
     return delegates;
 };
 
 export const fetchPriceInfo = async () => {
     const priceInfo = await request('get.market.prices', {});
     // Do something with priceInfo
+    
+    console.log(priceInfo);
     return priceInfo;
 };
 
