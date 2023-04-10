@@ -28,7 +28,7 @@ const priceInfoMessage = JSON.stringify({
   params: {}
 });
 
-const socket = new WebSocket('wss://testnet3-api.lisknode.io/ws');
+const socket = new WebSocket('wss://service.lisk.com/rpc-v2');
 
 export const fetchNodeInfo = async () => {
   const nodeInfoPromise = new Promise((resolve, reject) => {
