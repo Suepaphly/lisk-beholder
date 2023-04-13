@@ -3,11 +3,6 @@ const io = require('socket.io-client'); // The socket.io client
 
 const WS_RPC_ENDPOINT = 'wss://service.lisk.com/rpc-v2';
 
-const socket = io(WS_RPC_ENDPOINT, {
-  forceNew: true,
-  transports: ['websocket']
-});
-
 export const fetchCGInfo = async () => {
   try {
     const res = await axios.get(
