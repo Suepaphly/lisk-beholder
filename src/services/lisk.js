@@ -29,19 +29,6 @@ export const fetchCGInfo = async () => {
 
 const nodeSocket = new WebSocket('wss://api.lisknode.io/ws');
 
-
-export const fetchForgerStats = async () => {  
-     socket.emit('request', {
-      jsonrpc: '2.0',
-      method: 'get.forgers',
-      params: {limit: "5", offset: "0"} },
-      answer => {
-        console.log(answer);
-        process.exit(0);
-    });
-};
-
-
 export const fetchNodeInfo = async () => {
   const nodeInfoPromise = new Promise((resolve, reject) => {
     nodeSocket.onopen = function (evt) {
@@ -57,40 +44,41 @@ export const fetchNodeInfo = async () => {
   });
 
   const nodeInfo = await nodeInfoPromise;
-  //console.log(nodeInfo);
+  console.log(nodeInfo);
   return nodeInfo;
 };
 
-
+export const fetchForgerStats = async () => {  
+  socket.emit('request', {
+   jsonrpc: '2.0',
+   method: 'get.forgers',
+   params: {limit: "5", offset: "0"} },
+   answer => {
+     console.log(answer);
+     process.exit(0);
+ });
+};
 
 export const fetchDelegates = async () => {
-  const request = async (endpoint, method, params) => new Promise(resolve => {
-    const socket = io(endpoint, { forceNew: true, transports: ['websocket'] });
-  
   socket.emit('request', {
     jsonrpc: '2.0',
     method: 'get.accounts',
     params: {status: "active", limit: "103", offset: "0"} },
     answer => {
-      //console.log(answer);
+      console.log(answer);
       process.exit(0);
   });
-})};
-
-
+};
 
 export const fetchStandbyDelegates = async () => {  
-  const request = async (endpoint, method, params) => new Promise(resolve => {
-    const socket = io(endpoint, { forceNew: true, transports: ['websocket'] });
-  
   socket.emit('request', {
     jsonrpc: '2.0',
     method: 'get.accounts',
     params: {status: "standby", limit: "30", offset: "0"} },
     answer => {
-      //console.log(answer);
+      console.log(answer);
       process.exit(0);
   });
-})};
+};
 
 
