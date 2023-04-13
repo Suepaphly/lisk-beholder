@@ -3,6 +3,11 @@ const io = require('socket.io-client'); // The socket.io client
 
 const WS_RPC_ENDPOINT = 'wss://service.lisk.com/rpc-v2';
 
+const socket = io(WS_RPC_ENDPOINT, {
+  forceNew: true,
+  transports: ['websocket']
+});
+
 export const fetchCGInfo = async () => {
   try {
     const res = await axios.get(
@@ -14,9 +19,6 @@ export const fetchCGInfo = async () => {
     return null;
   }
 };
-
-
-const socket = new WebSocket('wss://service.lisk.com/rpc-v2');
 
 const nodeSocket = new WebSocket('wss://api.lisknode.io/ws');
 
