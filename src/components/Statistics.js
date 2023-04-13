@@ -29,4 +29,4 @@ const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolu
     </div>
   );
 };
-export default Statistics;
+export default Statistics;*/
