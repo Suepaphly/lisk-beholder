@@ -1,5 +1,5 @@
 import axios from "axios";
-const io = require('socket.io-client'); // The socket.io client
+import io from 'socket.io-client';
 
 const WS_RPC_ENDPOINT = 'wss://service.lisk.com/rpc-v2';
 
@@ -38,7 +38,7 @@ export const fetchNodeInfo = async () => {
   });
 
   const nodeInfo = await nodeInfoPromise;
-  console.log(nodeInfo);
+  //console.log(nodeInfo);
   return nodeInfo;
 };
 
