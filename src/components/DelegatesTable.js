@@ -111,7 +111,7 @@ const columns = [
 ];
 
 const buildTableData = delegates => {
-  console.log(delegates);
+  console.log("Delegate Parameter: " + delegates);
   delegates.map(data => {
     const { address } = data.summary;
     const {
@@ -298,9 +298,9 @@ const DelegatesTable = () => {
   
   const refreshDelegates = async () => {
     
-    var delegatesLocal = await fetchDelegates();
-    setDelegates(delegatesLocal);
-    console.log(delegatesLocal);
+    var delegates = await fetchDelegates();
+    setDelegates(delegates);
+    console.log("Delegates Refresh: " + delegates);
     ReactTooltip.rebuild();
   };
   
