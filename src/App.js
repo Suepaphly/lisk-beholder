@@ -29,7 +29,7 @@ const App = () => {
 
   const refreshStats = async () => {
     const forgerStats = await fetchForgerStats();
-    
+    console.log("Test");
 
     setForgers(forgerStats);
     setNodeInfo(nodeInfo);
