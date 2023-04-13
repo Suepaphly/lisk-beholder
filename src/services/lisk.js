@@ -57,7 +57,7 @@ export const fetchActiveDelegates = async () => {
     method: 'get.accounts',
     params: {status: "active", limit: "103", offset: "0"} },
     answer => {
-      console.log(answer);
+      //console.log(answer);
       process.exit(0);
   });
 })};
@@ -73,7 +73,7 @@ export const fetchStandbyDelegates = async () => {
     method: 'get.accounts',
     params: {status: "standby", limit: "30", offset: "0"} },
     answer => {
-      console.log(answer);
+      //console.log(answer);
       process.exit(0);
   });
 })};
