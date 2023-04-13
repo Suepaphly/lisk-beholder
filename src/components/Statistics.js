@@ -1,6 +1,6 @@
 import React from "react";
 import "./Statistics.css";
-
+/*
 const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolume }) => {
   return (
     <div>
