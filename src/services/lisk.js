@@ -26,7 +26,7 @@ const nodeSocket = new WebSocket('wss://api.lisknode.io/ws');
 export const fetchNodeInfo = async () => {
   const nodeInfoPromise = new Promise((resolve, reject) => {
     nodeSocket.onopen = function (evt) {
-      nodeSocket.send(nodeInfoMessge);
+      nodeSocket.send(nodeInfoMessage);
     };
     nodeSocket.onmessage = function (evt) {
       const nodeInfoArray = JSON.parse(evt.data);
