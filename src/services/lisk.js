@@ -64,6 +64,7 @@ export const fetchDelegates = async () => {
     method: 'get.accounts',
     params: {status: "active", limit: "103", offset: "0"} },
     answer => {
+      console.log(answer.result.data);
       return answer.result.data;
   });
 };
