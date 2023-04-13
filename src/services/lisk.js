@@ -44,7 +44,7 @@ export const fetchNodeInfo = async () => {
 
 
 
-export const fetchActiveDelegates = async () => {
+export const fetchDelegates = async () => {
   const request = async (endpoint, method, params) => new Promise(resolve => {
     const socket = io(endpoint, { forceNew: true, transports: ['websocket'] });
   
