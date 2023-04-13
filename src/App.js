@@ -6,7 +6,7 @@ import Statistics from "./components/Statistics";
 import Footer from "./components/Footer";
 import React, { useState, useEffect } from "react";
 import { statsRefreshRate } from "./config/config.json";
-import { fetchForgerStats, fetchNodeInfo, fetchPriceInfo, fetchCGInfo } from "./services/lisk";
+import { fetchForgerStats, fetchNodeInfo, fetchCGInfo } from "./services/lisk";
 import ReactTooltip from 'react-tooltip'
 
 const App = () => {
@@ -30,7 +30,6 @@ const App = () => {
   const refreshStats = async () => {
     const forgerStats = await fetchForgerStats();
     const nodeInfo = await fetchNodeInfo();
-    const price = await fetchPriceInfo();
     const cgi = await fetchCGInfo();
     const marketCap = cgi.market_data.market_cap.usd;
     const circSupply = cgi.market_data.circulating_supply;
