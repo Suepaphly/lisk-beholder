@@ -30,6 +30,18 @@ export const fetchCGInfo = async () => {
 const nodeSocket = new WebSocket('wss://api.lisknode.io/ws');
 
 
+export const fetchForgerStats = async () => {  
+     socket.emit('request', {
+      jsonrpc: '2.0',
+      method: 'get.forgers',
+      params: {limit: "5", offset: "0"} },
+      answer => {
+        console.log(answer);
+        process.exit(0);
+    });
+};
+
+
 export const fetchNodeInfo = async () => {
   const nodeInfoPromise = new Promise((resolve, reject) => {
     nodeSocket.onopen = function (evt) {
@@ -82,17 +94,3 @@ export const fetchStandbyDelegates = async () => {
 })};
 
 
-
-export const fetchForgerStats = async () => {  
-  const request = async (endpoint, method, params) => new Promise(resolve => {
-    const socket = io(endpoint, { forceNew: true, transports: ['websocket'] });
-
-  socket.emit('request', {
-    jsonrpc: '2.0',
-    method: 'get.forgers',
-    params: {limit: "3", offset: "0"} },
-    answer => {
-      console.log(answer);
-      process.exit(0);
-  });
-})};
