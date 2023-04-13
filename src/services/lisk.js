@@ -8,6 +8,13 @@ const socket = io(WS_RPC_ENDPOINT, {
   transports: ['websocket']
 });
 
+const nodeInfoMessage = JSON.stringify({
+  jsonrpc: "2.0",
+  id: 1,
+  method: "app:getNodeInfo",
+  params: {}
+});
+
 export const fetchCGInfo = async () => {
   try {
     const res = await axios.get(
