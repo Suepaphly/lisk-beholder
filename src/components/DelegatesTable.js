@@ -124,34 +124,34 @@ const buildTableData = delegates =>
     
     
     var powerUsers = [{
-"blainemono":   4000,
-"ondin":        1000,
-"przemer":      4000,
-"ultrafresh":   8000,
-"stellardynamic_vote": 5000,
-"mrv":  4000,
-"jeevanio_pool":   1000,
-"gregorst":     1000,
-"carbonara":    4000,
-"shinekami":    1000,
-"liskmagazine": 2000,
-"liskjapan":    1000,
-"liskearn":     1000,
-"phinx":        1000,
-"jump_pool":    1000,
-"jesusthehun":  4000,
-"lemii":        4000,
-"korben3":      4000,
-"moosty":       4000,
-"minions":      1000,
-"tonyt908":     6600,
-"jong":         3000,
-"hirish":       2000,
-"cc001":        2000,
-"gr33ndrag0n":  6500,
-"punkrock": 2000,
-"benevale": 1000,
-"helpinghand": 1000,
+      "blainemono":   4000,
+      "ondin":        1000,
+      "przemer":      4000,
+      "ultrafresh":   8000,
+      "stellardynamic_vote": 5000,
+      "mrv":  4000,
+      "jeevanio_pool":   1000,
+      "gregorst":     1000,
+      "carbonara":    4000,
+      "shinekami":    1000,
+      "liskmagazine": 2000,
+      "liskjapan":    1000,
+      "liskearn":     1000,
+      "phinx":        1000,
+      "jump_pool":    1000,
+      "jesusthehun":  4000,
+      "lemii":        4000,
+      "korben3":      4000,
+      "moosty":       4000,
+      "minions":      1000,
+      "tonyt908":     6600,
+      "jong":         3000,
+      "hirish":       2000,
+      "cc001":        2000,
+      "gr33ndrag0n":  6500,
+      "punkrock": 2000,
+      "benevale": 1000,
+      "helpinghand": 1000,
     }];
 
     var puser = data.dpos.delegate;
@@ -198,59 +198,59 @@ const buildTableData = delegates =>
     const { voteCapacity } = cap;
     
     var shareDelegates = [{
-"liberspirita": 80,
-"liskearn":     50,
-"moosty":       20,
-"private_pool": 70,
-"shinekami":    70,
-"benevale":     70,
-"korben3":      20,
-"liskroad":     60,
-"devasive":     0,
-"robinhood":    80,
-"przemer":      60,
-"samuray":      50,
-"lemii":        20,
-"spaceone_pool":        70,
-"grumlin":      0,
-"liskpool.top": 70,
-"spirita":      80,
-"spirita2":     80,
-"vipertkd":     50,
-"ultrafresh":   50,
-"eastwind_ja":  50,
-"mrgr": 30,
-"jump_pool":    70,
-"blainemono":   50,
-"liskjapan":    50,
-"mrv":  20,
-"irina18":      70,
-"cc001":        0,
-"jong": 50,
-"carbonara":    50,
-"anamix":       50,
-"liskcenter.io":        0,
-"gr33ndrag0n":  0,
-"loteria":      30,
-"pool80percent":        80,
-"jeevanio_pool":        75,
-"jesusthehun":  25,
-"corsaro":      0,
-"phinx":        30,
-"minions":      70,
-"liskmagazine": 60,
-"gregorst":     50,
-"t3ran13":      0,
-"goodWin80":    80,
-"kc":   30,
-"gong": 20,
-"ondin":        0,
-"savetheworld": 50,
-"dav1": 0,
-"lisk_nft":     70,
-"ilgio":        50,
-"eddedw":       0,
-"hitman":       50,
+      "liberspirita": 80,
+      "liskearn":     50,
+      "moosty":       20,
+      "private_pool": 70,
+      "shinekami":    70,
+      "benevale":     70,
+      "korben3":      20,
+      "liskroad":     60,
+      "devasive":     0,
+      "robinhood":    80,
+      "przemer":      60,
+      "samuray":      50,
+      "lemii":        20,
+      "spaceone_pool":        70,
+      "grumlin":      0,
+      "liskpool.top": 70,
+      "spirita":      80,
+      "spirita2":     80,
+      "vipertkd":     50,
+      "ultrafresh":   50,
+      "eastwind_ja":  50,
+      "mrgr": 30,
+      "jump_pool":    70,
+      "blainemono":   50,
+      "liskjapan":    50,
+      "mrv":  20,
+      "irina18":      70,
+      "cc001":        0,
+      "jong": 50,
+      "carbonara":    50,
+      "anamix":       50,
+      "liskcenter.io":        0,
+      "gr33ndrag0n":  0,
+      "loteria":      30,
+      "pool80percent":        80,
+      "jeevanio_pool":        75,
+      "jesusthehun":  25,
+      "corsaro":      0,
+      "phinx":        30,
+      "minions":      70,
+      "liskmagazine": 60,
+      "gregorst":     50,
+      "t3ran13":      0,
+      "goodWin80":    80,
+      "kc":   30,
+      "gong": 20,
+      "ondin":        0,
+      "savetheworld": 50,
+      "dav1": 0,
+      "lisk_nft":     70,
+      "ilgio":        50,
+      "eddedw":       0,
+      "hitman":       50,
       "helpinghand": 60,
       }];
     
@@ -280,14 +280,14 @@ const buildTableData = delegates =>
       voteCapacity,
       sharePercent,
     };
-  });
+});
 
 const DelegatesTable = () => {
   const [delegates, setDelegates] = useState([]);
   
   useEffect(() => {
     const intervalId = setInterval(refreshDelegates, delegatesRefreshRate);
-    //refreshDelegates();
+    refreshDelegates();
 
     return () => {
       clearInterval(intervalId);
@@ -297,12 +297,8 @@ const DelegatesTable = () => {
   
   const refreshDelegates = async () => {
     
-    var delegates = await fetchDelegates(0);
-    var temp = await fetchDelegates(100);
-    if (temp){
-      temp.forEach(element => delegates.push(element));
-      setDelegates(delegates);
-    }
+    var delegates = await fetchDelegates();
+    setDelegates(delegates);
     ReactTooltip.rebuild();
   };
   

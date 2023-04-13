@@ -54,7 +54,7 @@ export const fetchForgerStats = async () => {
    method: 'get.forgers',
    params: {limit: "5", offset: "0"} },
    answer => {
-     console.log(answer);
+    return answer.result.data;
      process.exit(0);
  });
 };
@@ -65,7 +65,7 @@ export const fetchDelegates = async () => {
     method: 'get.accounts',
     params: {status: "active", limit: "103", offset: "0"} },
     answer => {
-      console.log(answer);
+      return answer.result.data;
       process.exit(0);
   });
 };
@@ -76,7 +76,7 @@ export const fetchStandbyDelegates = async () => {
     method: 'get.accounts',
     params: {status: "standby", limit: "30", offset: "0"} },
     answer => {
-      console.log(answer);
+      return answer.result.data;
       process.exit(0);
   });
 };
