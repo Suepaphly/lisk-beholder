@@ -8,7 +8,7 @@ import starGreen from "../assets/starGreen.png";
 import starRed from "../assets/starRed.png";
 import ReactTooltip from 'react-tooltip';
 
-/*
+
 const columns = [
   {
     key: "rank",
@@ -287,7 +287,7 @@ const DelegatesTable = () => {
   
   useEffect(() => {
     const intervalId = setInterval(refreshDelegates, delegatesRefreshRate);
-    refreshDelegates();
+    //refreshDelegates();
 
     return () => {
       clearInterval(intervalId);
