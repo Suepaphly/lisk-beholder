@@ -29,11 +29,11 @@ const App = () => {
 
   const refreshStats = async () => {
     const forgerStats = await fetchForgerStats();
-    const nodeInfo = await fetchNodeInfo();
+    //const nodeInfo = await fetchNodeInfo();
     //const cgi = await fetchCGInfo();
-    const marketCap = cgi.market_data.market_cap.usd;
-    const circSupply = cgi.market_data.circulating_supply;
-    const totalVolume = cgi.market_data.total_volume.usd;
+    //const marketCap = cgi.market_data.market_cap.usd;
+    //const circSupply = cgi.market_data.circulating_supply;
+    //const totalVolume = cgi.market_data.total_volume.usd;
     
 
     setForgers(forgerStats);
