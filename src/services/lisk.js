@@ -1,5 +1,4 @@
 import axios from "axios";
-import axios from "axios";
 const io = require('socket.io-client'); // The socket.io client
 
 const WS_RPC_ENDPOINT = 'wss://service.lisk.com/rpc-v2';
