@@ -282,6 +282,7 @@ const buildTableData = delegates => {
     };
 })};
 
+
 const DelegatesTable = () => {
   const [delegates, setDelegates] = useState([]);
   
@@ -297,7 +298,9 @@ const DelegatesTable = () => {
   
   const refreshDelegates = async () => {
     
-    var delegates = await fetchDelegates();
+    var delegates = await fetchDelegates(0);
+    var temp = await fetchDelegates(100);
+    temp.forEach(element => delegates.push(element));
     setDelegates(delegates);
     ReactTooltip.rebuild();
   };
