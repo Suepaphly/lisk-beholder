@@ -59,15 +59,22 @@ export const fetchForgerStats = async () => {
 };
 
 export const fetchDelegates = async () => {
-  socket.emit('request', {
-    jsonrpc: '2.0',
-    method: 'get.accounts',
-    params: {status: "active", limit: "103", offset: "0"} },
-    answer => {
-      console.log(answer.result.data);
-      return answer.result.data;
+  return new Promise((resolve, reject) => {
+    socket.emit('request', {
+      jsonrpc: '2.0',
+      method: 'get.accounts',
+      params: {status: "active", limit: "103", offset: "0"} 
+    }, answer => {
+      if (answer.error) {
+        reject(answer.error);
+      } else {
+        console.log(answer.result.data);
+        resolve(answer.result.data);
+      }
+    });
   });
 };
+
 
 export const fetchStandbyDelegates = async () => {  
   socket.emit('request', {
