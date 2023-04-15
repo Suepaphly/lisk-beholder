@@ -36,7 +36,7 @@ const App = () => {
     const totalVolume = cgi.market_data.total_volume.usd;
     
 
-    setForgers(forgerStats.slice(0, 3));
+    setForgers(forgerStats);
     setNodeInfo(nodeInfo);
     setmarketCap(marketCap);
     setcircSupply(circSupply);

@@ -44,7 +44,6 @@ export const fetchNodeInfo = async () => {
   });
 
   const nodeInfo = await nodeInfoPromise;
-  console.log(nodeInfo);
   return nodeInfo;
 };
 
@@ -92,7 +91,6 @@ export const fetchStandbyDelegates = async () => {
       if (answer.error) {
         reject(answer.error);
       } else {
-        console.log(answer.result.data);
         resolve(answer.result.data);
       }
     });
