@@ -53,12 +53,11 @@ export const fetchForgerStats = async () => {
     socket.emit('request', {
       jsonrpc: '2.0',
       method: 'get.forgers',
-      params: {limit: "5", offset: "0"} 
+      params: {limit: "3", offset: "0"} 
     }, answer => {
       if (answer.error) {
         reject(answer.error);
       } else {
-        console.log(answer.result.data);
         resolve(answer.result.data);
       }
     });
@@ -71,12 +70,11 @@ export const fetchDelegates = async () => {
     socket.emit('request', {
       jsonrpc: '2.0',
       method: 'get.accounts',
-      params: {status: "active", limit: "103", offset: "0"} 
+      params: {status: "active", limit: "125", offset: "0"} 
     }, answer => {
       if (answer.error) {
         reject(answer.error);
       } else {
-        console.log(answer.result.data);
         resolve(answer.result.data);
       }
     });
