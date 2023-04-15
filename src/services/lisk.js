@@ -49,14 +49,22 @@ export const fetchNodeInfo = async () => {
 };
 
 export const fetchForgerStats = async () => {  
-  socket.emit('request', {
-   jsonrpc: '2.0',
-   method: 'get.forgers',
-   params: {limit: "5", offset: "0"} },
-   answer => {
-    return answer.result.data;
- });
+  return new Promise((resolve, reject) => {
+    socket.emit('request', {
+      jsonrpc: '2.0',
+      method: 'get.forgers',
+      params: {limit: "5", offset: "0"} 
+    }, answer => {
+      if (answer.error) {
+        reject(answer.error);
+      } else {
+        console.log(answer.result.data);
+        resolve(answer.result.data);
+      }
+    });
+  });
 };
+
 
 export const fetchDelegates = async () => {
   return new Promise((resolve, reject) => {
@@ -77,13 +85,21 @@ export const fetchDelegates = async () => {
 
 
 export const fetchStandbyDelegates = async () => {  
-  socket.emit('request', {
-    jsonrpc: '2.0',
-    method: 'get.accounts',
-    params: {status: "standby", limit: "30", offset: "0"} },
-    answer => {
-      return answer.result.data;
+  return new Promise((resolve, reject) => {
+    socket.emit('request', {
+      jsonrpc: '2.0',
+      method: 'get.accounts',
+      params: {status: "standby", limit: "30", offset: "0"} 
+    }, answer => {
+      if (answer.error) {
+        reject(answer.error);
+      } else {
+        console.log(answer.result.data);
+        resolve(answer.result.data);
+      }
+    });
   });
 };
+
 
 

@@ -37,12 +37,12 @@ const App = () => {
     setcircSupply(circSupply);
     settotalVolume(totalVolume);
   };
-    //<Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} marketCap={marketCap} circSupply={circSupply} totalVolume={totalVolume} />
+    
   return (
     <div className="App">
       <div className="container">
         <Header nodeInfo={nodeInfo} />
-       
+        <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} marketCap={marketCap} circSupply={circSupply} totalVolume={totalVolume} />
 	<DelegatesTable />
 	      <div className="legend" ><br /><br />
 		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
