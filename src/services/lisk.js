@@ -9,7 +9,7 @@ const socket = io(SERVICE_RPC_ENDPOINT, {
   transports: ['websocket']
 });
 
-const socket = io(NODE_RPC_ENDPOINT, {
+const socketNode = io(NODE_RPC_ENDPOINT, {
   forceNew: true,
   transports: ['websocket']
 });
@@ -29,7 +29,7 @@ export const fetchCGInfo = async () => {
 
 export const fetchNodeInfo = async () => {
   return new Promise((resolve, reject) => {
-    socket.emit('request', {
+    socketNode.emit('request', {
       jsonrpc: '2.0',
       method: 'app:getNodeInfo',
       params: {} 
