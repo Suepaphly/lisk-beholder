@@ -1,19 +1,19 @@
 import axios from "axios";
 import io from 'socket.io-client';
 
-const WS_RPC_ENDPOINT = 'wss://service.lisk.com/rpc-v2';
+const SERVICE_RPC_ENDPOINT = 'wss://service.lisk.com/rpc-v2';
+const NODE_RPC_ENDPOINT = 'wss://api.lisknode.io/ws';
 
-const socket = io(WS_RPC_ENDPOINT, {
+const socket = io(SERVICE_RPC_ENDPOINT, {
   forceNew: true,
   transports: ['websocket']
 });
 
-const nodeInfoMessage = JSON.stringify({
-  jsonrpc: "2.0",
-  id: 1,
-  method: "app:getNodeInfo",
-  params: {}
+const socket = io(NODE_RPC_ENDPOINT, {
+  forceNew: true,
+  transports: ['websocket']
 });
+
 
 export const fetchCGInfo = async () => {
   try {
@@ -27,25 +27,21 @@ export const fetchCGInfo = async () => {
   }
 };
 
-const nodeSocket = new WebSocket('wss://api.lisknode.io/ws');
-
 export const fetchNodeInfo = async () => {
-  const nodeInfoPromise = new Promise((resolve, reject) => {
-    nodeSocket.onopen = function (evt) {
-      nodeSocket.send(nodeInfoMessage);
-    };
-    nodeSocket.onmessage = function (evt) {
-      const nodeInfoArray = JSON.parse(evt.data);
-      console.log(nodeInfoArray);
-      resolve(nodeInfoArray);
-    };
-    nodeSocket.onerror = function (evt) {
-      reject(evt);
-    };
+  return new Promise((resolve, reject) => {
+    socket.emit('request', {
+      jsonrpc: '2.0',
+      method: 'app:getNodeInfo',
+      params: {} 
+    }, answer => {
+      if (answer.error) {
+        reject(answer.error);
+      } else {
+        console.log(answer.result.data);
+        resolve(answer.result.data);
+      }
+    });
   });
-
-  const nodeInfo = await nodeInfoPromise;
-  return nodeInfo;
 };
 
 export const fetchForgerStats = async () => {  
