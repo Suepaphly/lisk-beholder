@@ -298,8 +298,8 @@ const DelegatesTable = () => {
   
   const refreshDelegates = async () => {
     
-    var delegates = await fetchDelegates(0);
-    var temp = await fetchDelegates(100);
+    var delegates = await fetchDelegates("active", "100", "0");
+    var temp = await fetchDelegates("active", "26", "100");
     temp.forEach(element => delegates.push(element));
     setDelegates(delegates);
     ReactTooltip.rebuild();

@@ -65,7 +65,7 @@ export const fetchForgerStats = async () => {
 };
 
 
-export const fetchDelegates = async (status = "active", limit = "103", offset = "0") => {
+export const fetchDelegates = async (status, limit, offset) => {
   return new Promise((resolve, reject) => {
     socket.emit('request', {
       jsonrpc: '2.0',
@@ -81,21 +81,6 @@ export const fetchDelegates = async (status = "active", limit = "103", offset = 
   });
 };
 
-export const fetchStandbyDelegates = async (status = "standby", limit = "30", offset = "0") => {  
-  return new Promise((resolve, reject) => {
-    socket.emit('request', {
-      jsonrpc: '2.0',
-      method: 'get.accounts',
-      params: {status, limit, offset} 
-    }, answer => {
-      if (answer.error) {
-        reject(answer.error);
-      } else {
-        resolve(answer.result.data);
-      }
-    });
-  });
-};
 
 
 
