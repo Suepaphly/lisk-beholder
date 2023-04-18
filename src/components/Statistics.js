@@ -2,19 +2,15 @@ import React from "react";
 import "./Statistics.css";
 
 /*
-<tr>
   <td><strong> Height: </strong>{nodeInfo?.height || "N/A"} </td>           
-  <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from Kraken) </td>
-</tr>
 */
 
-const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolume }) => {
+const Statistics = ({ forgers, price, marketCap, circSupply, totalVolume }) => {
   return (
     <div>
       <table className="statsTable">
         <tbody>         
-          <tr>
-            <td><strong> Height: </strong>{nodeInfo?.height || "N/A"} </td>           
+          <tr>                       
             <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from CoinGecko) </td>
           </tr>
           <tr>

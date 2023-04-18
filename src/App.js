@@ -11,7 +11,7 @@ import ReactTooltip from 'react-tooltip'
 
 const App = () => {
   const [forgers, setForgers] = useState([]);
-  const [nodeInfo, setNodeInfo] = useState(null);
+  //const [nodeInfo, setNodeInfo] = useState(null);
   const [price, setPrice] = useState(null);
   const [cgi, setCGI] = useState(null);
   const [marketCap, setmarketCap] = useState(null);
@@ -34,23 +34,29 @@ const App = () => {
     const marketCap = cgi.market_data.market_cap.usd;
     const circSupply = cgi.market_data.circulating_supply;
     const totalVolume = cgi.market_data.total_volume.usd;
-    const nodeInfo = await fetchNodeInfo();
+    //const nodeInfo = await fetchNodeInfo();
     
 
     setForgers(forgerStats);
-    console.log(nodeInfo);
-    setNodeInfo(nodeInfo);
+    //console.log(nodeInfo);
+    //setNodeInfo(nodeInfo);
     setPrice(price);
     setmarketCap(marketCap);
     setcircSupply(circSupply);
     settotalVolume(totalVolume);
   };
-    
+  
+  /*  
+  <Header nodeInfo={nodeInfo} />
+  <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} marketCap={marketCap} circSupply={circSupply} totalVolume={totalVolume} />
+  */
+
+
   return (
     <div className="App">
       <div className="container">
-        <Header nodeInfo={nodeInfo} />
-        <Statistics forgers={forgers} nodeInfo={nodeInfo} price={price} marketCap={marketCap} circSupply={circSupply} totalVolume={totalVolume} />
+        <Header />
+        <Statistics forgers={forgers} price={price} marketCap={marketCap} circSupply={circSupply} totalVolume={totalVolume} />
 	<DelegatesTable />
 	      <div className="legend" ><br /><br />
 		<img src="https://i.imgur.com/80BqSIy.png" alt="badges" />:<strong> Green Gem</strong> - This Delegate is actively forging. 
