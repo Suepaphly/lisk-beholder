@@ -14,7 +14,7 @@ const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolu
       <table className="statsTable">
         <tbody>         
           <tr>
-            <td><strong> Height: </strong>{nodeInfo.height || "N/A"} </td>           
+            <td><strong> Height: </strong>{nodeInfo?.height || "N/A"} </td>           
             <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from CoinGecko) </td>
           </tr>
           <tr>
