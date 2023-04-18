@@ -1,14 +1,21 @@
 import React from "react";
 import "./Statistics.css";
 
+/*
+<tr>
+  <td><strong> Height: </strong>{nodeInfo?.height || "N/A"} </td>           
+  <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from Kraken) </td>
+</tr>
+*/
+
 const Statistics = ({ forgers, nodeInfo, price, marketCap, circSupply, totalVolume }) => {
   return (
     <div>
       <table className="statsTable">
-        <tbody>
+        <tbody>         
           <tr>
             <td><strong> Height: </strong>{nodeInfo?.height || "N/A"} </td>           
-            <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from Kraken) </td>
+            <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from CoinGecko) </td>
           </tr>
           <tr>
               <td><strong> Circulating Supply: </strong> {Number(circSupply).toLocaleString("en")} LSK </td>

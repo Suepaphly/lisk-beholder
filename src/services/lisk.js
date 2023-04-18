@@ -8,13 +8,6 @@ const socket = io(WS_RPC_ENDPOINT, {
   transports: ['websocket']
 });
 
-const nodeInfoMessage = JSON.stringify({
-  jsonrpc:"2.0",
-  id:21582,
-  method:"app:getNodeInfo",
-  params:{}
-});
-
 export const fetchCGInfo = async () => {
   try {
     const res = await axios.get(
@@ -26,6 +19,15 @@ export const fetchCGInfo = async () => {
     return null;
   }
 };
+
+/*
+
+const nodeInfoMessage = JSON.stringify({
+  jsonrpc:"2.0",
+  id:21582,
+  method:"app:getNodeInfo",
+  params:{}
+});
 
 const nodeSocket = new WebSocket('wss://api.lisknode.io/ws');
 
@@ -49,6 +51,8 @@ export const fetchNodeInfo = async () => {
     };
   });
 };
+
+*/
 
 export const fetchForgerStats = async () => {  
   return new Promise((resolve, reject) => {
