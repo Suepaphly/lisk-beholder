@@ -29,21 +29,23 @@ export const fetchCGInfo = async () => {
 
 const nodeSocket = new WebSocket('wss://api.lisknode.io/ws');
 
-export const fetchNodeInfo = () => {
+export const fetchNodeInfo = async () => {
   return new Promise((resolve, reject) => {
-    nodeSocket.on('open', () => {
+    nodeSocket.onopen = function (evt) {
       nodeSocket.send(nodeInfoMessage);
-    });
-    nodeSocket.on('message', (evt) => {
-      const nodeInfoArray = JSON.parse(evt, undefined, 4);
-      if (nodeInfoArray) {
+    };
+    nodeSocket.onmessage = function (evt) {
+      const nodeInfoArray = JSON.parse(evt.data, undefined, 4);
+      if (nodeInfoArray) {   
+        
         console.log(nodeInfoArray);
         resolve(nodeInfoArray);
+
       }
-    });
-    nodeSocket.on('error', (err) => {
-      reject(err);
-    });
+    };
+    nodeSocket.onerror = function (evt) {
+      reject(evt);
+    };
   });
 };
 
