@@ -39,6 +39,7 @@ export const fetchNodeInfo = async () => {
       if (nodeInfoArray.method == "app:getNodeInfo") {   
         
         console.log(nodeInfoArray);
+        nodeSocket.close(0);
         resolve(nodeInfoArray);
 
       }
