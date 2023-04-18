@@ -110,7 +110,7 @@ const columns = [
   },
 ];
 
-const buildTableData = delegates => {
+const buildTableData = delegates =>
   delegates.map(data => {
 
     const { address } = data.summary;
@@ -281,7 +281,7 @@ const buildTableData = delegates => {
       voteCapacity,
       sharePercent,
     };
-})};
+});
 
 
 const DelegatesTable = () => {
