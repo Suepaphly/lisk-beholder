@@ -8,6 +8,13 @@ const socket = io(WS_RPC_ENDPOINT, {
   transports: ['websocket']
 });
 
+const nodeInfoMessage = JSON.stringify({
+  jsonrpc:"2.0",
+  id:1,
+  method:"app:getNodeInfo",
+  params:{}
+});
+
 export const fetchCGInfo = async () => {
   try {
     const res = await axios.get(
@@ -22,36 +29,25 @@ export const fetchCGInfo = async () => {
 
 const nodeSocket = new WebSocket('wss://api.lisknode.io/ws');
 
-const nodeInfoMessage = JSON.stringify({
-  jsonrpc: "2.0",
-  id: 1,
-  method: "app:getNodeInfo",
-  params: {}
-});
-
 export const fetchNodeInfo = async () => {
   const nodeInfoPromise = new Promise((resolve, reject) => {
     nodeSocket.onopen = function (evt) {
       nodeSocket.send(nodeInfoMessage);
     };
     nodeSocket.onmessage = function (evt) {
-      try {
-        const nodeInfo = JSON.parse(evt.data);
-        if (nodeInfo.result) {
-          console.log(nodeInfo.result);
-          resolve(nodeInfo.result);
-        } else if (nodeInfo.error) {
-          reject(nodeInfo.error);
-        }
+      const nodeInfoArray = JSON.parse(evt.data, undefined, 4)
+      if (nodeInfoArray.result) {   
+        
+        console.log(nodeInfoArray.result);
+        resolve(nodeInfoArray.result);
         nodeSocket.close();
-      } catch (error) {
-        reject(error);
       }
     };
     nodeSocket.onerror = function (evt) {
       reject(evt);
     };
   });
+
   const nodeInfo = await nodeInfoPromise;
   return nodeInfo;
 };
