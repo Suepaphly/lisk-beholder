@@ -9,10 +9,10 @@ const socket = io(WS_RPC_ENDPOINT, {
 });
 
 const nodeInfoMessage = JSON.stringify({
-  jsonrpc: "2.0",
-  id: 1,
-  method: "app:getNodeInfo",
-  params: {}
+  jsonrpc:"2.0",
+  id:1,
+  method:"app:getNodeInfo",
+  params:{}
 });
 
 export const fetchCGInfo = async () => {
@@ -36,7 +36,7 @@ export const fetchNodeInfo = async () => {
     };
     nodeSocket.onmessage = function (evt) {
       const nodeInfoArray = JSON.parse(evt.data);
-      if (nodeInfoArray.id = "1") {   
+      if (nodeInfoArray) {   
         
         console.log(nodeInfoArray);
         resolve(nodeInfoArray);
