@@ -77,6 +77,7 @@ export const fetchDelegates = async (status, limit, offset) => {
       if (answer.error) {
         reject(answer.error);
       } else {
+        console.log(answer.result.data);
         resolve(answer.result.data);
       }
     });
