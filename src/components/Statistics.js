@@ -11,7 +11,7 @@ const Statistics = ({ forgers, price, marketCap, circSupply, totalVolume }) => {
       <table className="statsTable">
         <tbody>         
           <tr>                       
-            <td className="textAlignRight"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from CoinGecko) </td>
+            <td className="textAlignLeft"><strong> Price: </strong> $ {Number(price).toFixed(2)} (from CoinGecko) </td>
           </tr>
           <tr>
               <td><strong> Circulating Supply: </strong> {Number(circSupply).toLocaleString("en")} LSK </td>
