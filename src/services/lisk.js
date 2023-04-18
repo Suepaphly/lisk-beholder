@@ -35,12 +35,12 @@ export const fetchNodeInfo = async () => {
       nodeSocket.send(nodeInfoMessage);
     };
     nodeSocket.onmessage = function (evt) {
-      const nodeInfoArray = JSON.parse(evt.data, undefined, 4)
-      if (nodeInfoArray.result) {   
+      const nodeInfoArray = JSON.parse(evt.data)
+      if (nodeInfoArray) {   
         
-        console.log(nodeInfoArray.result);
-        resolve(nodeInfoArray.result);
-        nodeSocket.close();
+        console.log(nodeInfoArray);
+        resolve(nodeInfoArray);
+
       }
     };
     nodeSocket.onerror = function (evt) {
