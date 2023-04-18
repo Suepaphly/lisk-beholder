@@ -10,7 +10,7 @@ const socket = io(WS_RPC_ENDPOINT, {
 
 const nodeInfoMessage = JSON.stringify({
   jsonrpc:"2.0",
-  id:2158261980684897,
+  id:21582,
   method:"app:getNodeInfo",
   params:{}
 });
@@ -77,7 +77,6 @@ export const fetchDelegates = async (status, limit, offset) => {
       if (answer.error) {
         reject(answer.error);
       } else {
-        console.log(answer.result.data);
         resolve(answer.result.data);
       }
     });

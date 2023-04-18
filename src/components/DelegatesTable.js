@@ -112,6 +112,8 @@ const columns = [
 
 const buildTableData = delegates => {
   delegates.map(data => {
+    console.log(data);
+
     const { address } = data.summary;
     const {
       rank,
