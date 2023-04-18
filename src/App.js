@@ -12,7 +12,7 @@ import ReactTooltip from 'react-tooltip'
 const App = () => {
   const [forgers, setForgers] = useState([]);
   const [nodeInfo, setNodeInfo] = useState(null);
-  //const [price, setPrice] = useState(null);
+  const [price, setPrice] = useState(null);
   const [cgi, setCGI] = useState(null);
   const [marketCap, setmarketCap] = useState(null);
   const [circSupply, setcircSupply] = useState(null);
