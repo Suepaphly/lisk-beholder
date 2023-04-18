@@ -29,7 +29,7 @@ const App = () => {
 
   const refreshStats = async () => {
     const forgerStats = await fetchForgerStats();
-    //const nodeInfo = await fetchNodeInfo();
+    const nodeInfo = await fetchNodeInfo();
     const cgi = await fetchCGInfo();
     const price = cgi.market_data.current_price.usd;
     const marketCap = cgi.market_data.market_cap.usd;

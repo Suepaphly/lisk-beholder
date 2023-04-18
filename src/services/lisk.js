@@ -20,11 +20,10 @@ export const fetchCGInfo = async () => {
   }
 };
 
-/*
 
 const nodeInfoMessage = JSON.stringify({
   jsonrpc:"2.0",
-  id:21582,
+  id:1,
   method:"app:getNodeInfo",
   params:{}
 });
@@ -38,7 +37,7 @@ export const fetchNodeInfo = async () => {
     };
     nodeSocket.onmessage = function (evt) {
       const nodeInfoArray = JSON.parse(evt.data, undefined, 4);
-      if (nodeInfoArray.method == "app:getNodeInfo") {   
+      if (nodeInfoArray.id == "1") {   
         
         console.log(nodeInfoArray);
         nodeSocket.close(0);
@@ -52,7 +51,6 @@ export const fetchNodeInfo = async () => {
   });
 };
 
-*/
 
 export const fetchForgerStats = async () => {  
   return new Promise((resolve, reject) => {
