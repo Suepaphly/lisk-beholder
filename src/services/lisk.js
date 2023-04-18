@@ -1,7 +1,7 @@
 import axios from "axios";
 import io from 'socket.io-client';
 
-const WS_RPC_ENDPOINT = 'wss://localhost:9901/rpc-v2';
+const WS_RPC_ENDPOINT = 'wss://service.lisk.com/rpc-v2';
 
 const socket = io(WS_RPC_ENDPOINT, {
   forceNew: true,
