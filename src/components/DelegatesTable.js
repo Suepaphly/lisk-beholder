@@ -42,7 +42,7 @@ const columns = [
       if (a.badges > b.badges) return 1;
       return 0;
     },
-    defaultSortOrder: "descend", // 1 = EG, 2 = EV, 3 = BA, 4 = EV+EG, 5 = EV+BA, 6 = EV+EG, 7 = EV+EG+BA, 8 = UF+EG 
+    defaultSortOrder: "descend", // 1 = EG, 2 = EV, 3 = BA, 4 = EV+EG, 5 = EV+BA, 6 = EV+EG, 7 = EV+EG+BA, 8 = UF+EG+BA 
     render: value => 
       value == 1000 ? <span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span>
     : value == 2000 ? <span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span>
@@ -53,7 +53,7 @@ const columns = [
     : value == 6500 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Green Drake - Awarded for the creation of dragon wizardry which supports other Lisk delegates." ><img src="https://i.imgur.com/6K5rnE7.png" /></span></span>
     : value == 6600 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Tool Master - Crafter of many blockchain tools located at lisk.support" ><img src="https://i.imgur.com/iXCzQH5.gif" /></span></span>
     : value == 7000 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
-    : value == 8000 ? <span><span data-tip="Ultrafresh Powerup - Voting for this delegate provides Lisk with grassroots marketing and the development of NFTs and Gamefi."><img src="https://i.imgur.com/RhivWyY.gif" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span></span>
+    : value == 8000 ? <span><span data-tip="Ultrafresh Powerup - Voting for this delegate provides Lisk with grassroots marketing and the development of NFTs and Gamefi."><img src="https://i.imgur.com/RhivWyY.gif" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span></span>/></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
     : null,
   },
   {
