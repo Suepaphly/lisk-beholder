@@ -121,6 +121,7 @@ const buildTableData = delegates =>
       voteWeight,
       producedBlocks,
       username,
+      consecutiveMissedBlocks,
     } = data.dpos.delegate;
         
     
@@ -283,6 +284,7 @@ const buildTableData = delegates =>
       producedBlocks,
       voteCapacity,
       sharePercent,
+      consecutiveMissedBlocks,
     };
 });
 
