@@ -51,7 +51,7 @@ const columns = [
     : value == 5000 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
     : value == 6000 ? <span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
     : value == 6500 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Green Drake - Awarded for the creation of dragon wizardry which supports other Lisk delegates." ><img src="https://i.imgur.com/6K5rnE7.png" /></span></span>
-    : value == 6600 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Tool Master - Crafter of many blockchain tools located at lisk.support" ><img src="https://i.imgur.com/iXCzQH5.gif" /></span></span>
+    : value == 6600 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Tool Master - Active developer of sidechains and tools on the Lisk blockchain" ><img src="https://i.imgur.com/iXCzQH5.gif" /></span></span>
     : value == 7000 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
     : value == 8000 ? <span><span data-tip="Ultrafresh Powerup - Voting for this delegate provides Lisk with grassroots marketing and the development of NFTs and Gamefi."><img src="https://i.imgur.com/RhivWyY.gif" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span></span>
     : value == 9001 ? <span><span data-tip="Ultrafresh Powerup - Voting for this delegate provides Lisk with grassroots marketing and the development of NFTs and Gamefi."><img src="https://i.imgur.com/RhivWyY.gif" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
@@ -146,7 +146,7 @@ const buildTableData = delegates =>
       "korben3":      4000,
       "moosty":       4000,
       "minions":      1000,
-      "tonyt908":     6600,
+      "tonyt908":     2000,
       "jong":         3000,
       "hirish":       2000,
       "cc001":        2000,
@@ -154,6 +154,7 @@ const buildTableData = delegates =>
       "punkrock": 2000,
       "benevale": 1000,
       "helpinghand": 1000,
+      "suepaphly": 6600,
     }];
 
     var puser = data.dpos.delegate;
@@ -254,6 +255,7 @@ const buildTableData = delegates =>
       "eddedw":       0,
       "hitman":       50,
       "helpinghand": 60,
+      "stellardynamic_vote": 50,
       }];
     
     var zero = [];
