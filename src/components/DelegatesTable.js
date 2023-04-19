@@ -54,6 +54,7 @@ const columns = [
     : value == 6600 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Tool Master - Crafter of many blockchain tools located at lisk.support" ><img src="https://i.imgur.com/iXCzQH5.gif" /></span></span>
     : value == 7000 ? <span><span data-tip="Enhanced Value - Recognized for providing valuable contributions to the community." ><img src="https://i.imgur.com/exk720m.png" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
     : value == 8000 ? <span><span data-tip="Ultrafresh Powerup - Voting for this delegate provides Lisk with grassroots marketing and the development of NFTs and Gamefi."><img src="https://i.imgur.com/RhivWyY.gif" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span></span>
+    : value == 9001 ? <span><span data-tip="Ultrafresh Powerup - Voting for this delegate provides Lisk with grassroots marketing and the development of NFTs and Gamefi."><img src="https://i.imgur.com/RhivWyY.gif" /></span><span data-tip="Enhanced Gains - This Delegate excludes their self-vote which increases the voters rewards."><img src="https://i.imgur.com/rpA3i6t.png" /></span><span data-tip="Bonus Airdrop - Voters of this delegate will earn sidechain tokens." ><img src="https://i.imgur.com/crfdMSC.png" /></span></span>
     : null,
   },
   {
@@ -128,7 +129,7 @@ const buildTableData = delegates =>
       "blainemono":   4000,
       "ondin":        1000,
       "przemer":      4000,
-      "ultrafresh":   8000,
+      "ultrafresh":   9001,
       "stellardynamic_vote": 5000,
       "mrv":  4000,
       "jeevanio_pool":   1000,
