@@ -131,13 +131,12 @@ const buildTableData = delegates =>
       "ondin":        1000,
       "przemer":      4000,
       "ultrafresh":   9001,
-      "stellardynamic_vote": 5000,
+      "stellardynamic_vote": 4000,
       "mrv":  4000,
       "jeevanio_pool":   1000,
       "gregorst":     1000,
       "carbonara":    4000,
       "shinekami":    1000,
-      "liskmagazine": 2000,
       "liskjapan":    1000,
       "liskearn":     1000,
       "phinx":        1000,
@@ -156,6 +155,7 @@ const buildTableData = delegates =>
       "benevale": 1000,
       "helpinghand": 1000,
       "suepaphly": 6600,
+      "anonimowy891": 1000,
     }];
 
     var puser = data.dpos.delegate;
@@ -257,6 +257,8 @@ const buildTableData = delegates =>
       "hitman":       50,
       "helpinghand": 60,
       "stellardynamic_vote": 50,
+      "anonimowy891" : 50,
+      "suepaphly" : 25,
       }];
     
     var zero = [];
