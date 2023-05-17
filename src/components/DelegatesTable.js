@@ -155,7 +155,7 @@ const buildTableData = delegates =>
       "benevale": 1000,
       "helpinghand": 1000,
       "suepaphly": 6600,
-      "anonimowy891": 1000,
+      "anonimowy891": 4000,
     }];
 
     var puser = data.dpos.delegate;
@@ -205,7 +205,7 @@ const buildTableData = delegates =>
       "liberspirita": 80,
       "liskearn":     50,
       "moosty":       20,
-      "private_pool": 70,
+      "private_pool": 75,
       "shinekami":    70,
       "benevale":     70,
       "korben3":      20,
